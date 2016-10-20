@@ -1,0 +1,46 @@
+h1, h2{
+  text-align: center;
+  margin-top: 39px;
+  margin-bottom: 2px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  color: rgba(0,0,0,.8);
+  font-weight: bolder;
+  font-size: 32px;
+}
+h2{
+  margin-top: 0px;
+  margin-bottom: 22px;
+  color: rgba(0,0,0,.44);
+  font-weight: normal;
+  line-height: 1;
+  font-size: 27px;
+  letter-spacing: -0.22px;
+}
+img{
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+
+}
+article{
+  width: 600px;
+  text-align: center;
+  margin: 0px auto;
+
+}
+body{
+  margin: 0
+}
+
+p{
+  font-size: 21px;
+  font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+  color: rgba(0,0,0,.8);
+  text-align: justify;
+  font-style: italic;
+  letter-spacing: -.003;
+  line-height: 1.58;
+}
+#ketto {
+  font-style:normal;
+}
