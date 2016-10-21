@@ -16,3 +16,12 @@ p {
   padding: 20px;
   font-size: 18px;
 }
+.left {
+  background: url(duck.png) left center no-repeat
+}
+.center {
+  background: url(duck.png) center center no-repeat
+}
+.right {
+  background: url(duck.png) right center no-repeat
+}
