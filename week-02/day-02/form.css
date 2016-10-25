@@ -1,0 +1,78 @@
+main {
+  margin: 20px auto;
+  width: 800px;
+  background-color: #ddccff;
+  font-family: "Segoe UI";
+}
+h3 {
+  font-size: 20px;
+  font-family:  "Segoe UI";
+  font-weight: 600;
+  color: #33334d;
+  margin-left: 76px;
+  padding-top: 50px;
+}
+
+ h4 {
+  color:#33334d;
+  margin-bottom: 0px;
+}
+
+p {
+  color:#52527a;
+}
+
+h2 {
+  background-color: #7575a3;
+  color: #e0e0eb;
+  margin-bottom: -10px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+}
+
+.dateGender {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.brandnames {
+  display: flex;
+}
+
+.firstpart {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.firstcolumn, .secondcolumn {
+  width: 300px;
+}
+input[type=text], input[type=tel], input[type=email], input[type=url], input[type=text] {
+  width: 97%;
+  padding: 3px;
+}
+select {
+  width: 100%;
+  padding: 3px;
+}
+input[type=number] {
+  width: 35%;
+}
+input[type=checkbox] {
+  margin-top: 10px;
+}
+
+.horizontalpart {
+  margin: 0 auto;
+  width: 80%;
+}
+textarea {
+  width: 99%;
+  height: 200px;
+
+}
+
+footer {
+  display: flex;
+}

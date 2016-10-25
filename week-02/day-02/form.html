@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="form.css">
+  <base href=" " type="_blank"
+</head>
+
+<body>
+
+  <main>
+    <h3>Profil</h3>
+    <form action="action_page.php" method=post>
+      <div class="firstpart">
+        <div class="firstcolumn">
+          <h2>Személyes adatok</h2>
+          <div>
+            <h4>Név</h4>
+            <input type="text" name="user_name">
+          </div>
+
+          <div class="dateGender">
+            <div class="birthdate">
+              <h4>Születési éved</h4>
+              <input type="number" name="birth_date" placeholder="pl.1984" maxlength="4">
+            </div>
+
+            <div class="gender">
+              <h4>Nemed</h4>
+              <input type="radio" id="female" name="user_gender" checked>
+              <label for="female">Nő</label>
+
+              <input type="radio" id="male" name="user_gender">
+              <label for="male">Férfi</label>
+
+            </div>
+          </div>
+
+          <h4>Milyen márkákat szeretsz?</h4>
+          <div class="brandnames">
+            <div class="firstcolbrand">
+              <input type="checkbox" id="brandAd" name="favourite_brand">
+              <label for="brandAd">Adidas</label><br>
+              <input type="checkbox" id="brandApp" name="favourite_brand">
+              <label for="brandApp">Apple</label><br>
+              <input type="checkbox" id="brandCC" name="favourite_brand">
+              <label for="brandCC">Coca-cola</label><br>
+              <input type="checkbox" id="brandM" name="favourite_brand">
+              <label for="brandM">Mazda</label><br>
+              <input type="checkbox" id="brandN" name="favourite_brand"><label for="brandN">Nike</label> <br>
+            </div>
+
+            <div clas="secondcolbrand">
+              <input type="checkbox" id="brandO" name="favourite_brand">
+              <label for="brandO">Opel</label><br>
+              <input type="checkbox" id="brandR" name="favourite_brand">
+              <label for="brandR">Ray-ban</label><br>
+              <input type="checkbox" id="brandS" name="favourite_brand">
+              <label for="brandS">Starbucks</label><br>
+              <input type="checkbox" id="brandT" name="favourite_brand">
+              <label for="brandT">Tesla</label><br>
+              <input type="checkbox" id="brandY" name="favourite_brand"><label for="brandY">Yahoo</label> <br>
+            </div>
+          </div>
+          <p>Többet is választhatsz!</p>
+        </div>
+
+        <div class="secondcolumn">
+          <h2>Kapcsolat</h2>
+          <div>
+            <h4>Telefonszám</h4>
+            <label for="tel"></label>
+            <input type="tel" id="tel" name="user_tel" placeholder="+36 -- --- ----">
+          </div>
+
+          <div>
+            <h4>E-mailcím</h4>
+            <label for="email"></label>
+            <input type="email" id="email" name="user_email" placeholder="nev@domain.hu">
+          </div>
+
+          <div>
+            <h4>Facebook profilod</h4>
+            <label for="facebook"></label>
+            <input type="url" id="facebook" name="user_facebook" placeholder="https:\\facebook.com\..">
+          </div>
+
+          <div>
+            <h4>Twitter profilod</h4>
+            <label for="twitter"></label>
+            <input type="url" id="twitter" name="user_twitter" placeholder="https:\\twitter.com\..">
+          </div>
+
+          <div>
+            <h4>Milyen házban laksz?</h4>
+            <label for="house"></label>
+            <select id="house" name="user_typehouse" placeholder="Choose type!">
+              <option value="choose" disabled selected>Válassz típust!</option>
+              <option value="family">családi</option>
+              <option value="block">panel</option>
+              <option value="cottage">vidéki</option>
+              <option value="manor">kúria</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizontalpart">
+        <div class="introduction">
+          <h4>Bemutatkozás</h4>
+          <textarea placeholder="Írj magadról pár mondatot!"></textarea>
+        </div>
+        <div>
+          <h4>CV feltöltése</h4>
+          <input type="file" name="user_cv" value="FILE">
+        </div>
+        <div class="termsAndConditions">
+          <input type="checkbox" id="terms" name="terms" value="true" required>
+          <label for="terms">Elfogadom a <a href="#">felhasználási feltételeket</a></label>
+        </div>
+        <footer>
+          <div class="button submit">
+            <button type="submit">Mentés</button>
+          </div>
+          <div class="button erase">
+            <button type="reset">Űrlap törlése</button>
+          </div>
+        </footer>
+      </div>
+
+    </form>
+
+  </main>
+</body>
+</html>

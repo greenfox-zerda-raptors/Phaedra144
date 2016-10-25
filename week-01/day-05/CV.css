@@ -9,12 +9,12 @@ hgroup {
   background: url(CVphoto2.jpg) no-repeat;
   background-size: 1800px 600px;
   background-position: center;
-  opacity: 0.5;
+  background-color: grey;
+  background-blend-mode: lighten;
   font-size: 190%;
   font-family: "Arial";
   color: #212F3D;
   margin: 0;
-  position: relative;
 }
 
 h2 {
