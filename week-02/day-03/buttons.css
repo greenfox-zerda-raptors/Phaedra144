@@ -1,0 +1,44 @@
+main {
+  font-family:  "Segoe UI";
+  margin: 20px auto;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #33334d;
+  margin-left: 50px;
+}
+
+button {
+  font-size: 24px;
+  padding: 14px 40px;
+  border-radius: 2px;
+  margin: auto 10px;
+}
+button:hover {
+  opacity: 0.5;
+}
+.whitebutton {
+  background-color: silver;
+  background: linear-gradient(white,silver);
+  color: grey;
+  box-shadow: 1px 5px 8px 0 rgba(0,0,0,0.2);
+  margin-left: 100px;
+}
+
+.bluebutton {
+  background-color: lightseagreen;
+  background: linear-gradient(#67e4de,lightseagreen);
+  color: white;
+  box-shadow: 1px 5px 8px 0 rgba(0,0,0,0.2);
+  border-color: #17827d;
+}
+
+.greenbutton {
+  background-color:#00cc00;
+  background: linear-gradient(#66ff66,#00cc00);
+  color: white;
+  box-shadow: 1px 5px 8px 0 rgba(0,0,0,0.2);
+  border-color: #006600;
+}
