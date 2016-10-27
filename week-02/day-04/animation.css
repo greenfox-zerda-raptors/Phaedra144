@@ -1,0 +1,46 @@
+main {
+  background-color: #333333;
+  width: 80%;
+  height: 500px;
+  margin: 30px auto;
+  padding-top: 20px;
+  font-family:  "Segoe UI";
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+  margin-left: 130px;
+  font-family:  "Segoe UI";
+}
+
+.whitebox {
+  margin: 120px auto;
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  transform: rotate(45deg);
+  position: relative;
+  cursor: pointer;
+}
+.whitebox:hover {
+  color: salmon;
+}
+
+.redbox {
+  border: 3px solid salmon;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transform: rotateZ(-45deg);
+  transition: 1s;
+}
+.redbox:hover {
+  transform: rotate(0deg);
+}
+.whitebox p {
+  transform: rotate(-45deg);
+  position: absolute;
+  font-size: 36px;
+  padding: 10px;
+}
