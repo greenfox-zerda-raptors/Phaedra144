@@ -32,9 +32,7 @@ thead {
   border-style: hidden;
   border-bottom: 5px solid #ccc;
 }
-tr>th {
-  border-bottom: 4px solid #ccc;
-}
+
 th, td {
   border: 2px solid #ccc;
   padding-left: 30px;
