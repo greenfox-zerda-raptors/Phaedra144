@@ -1,42 +1,80 @@
 
 body {
     background: #f6f6f6;
+    font-family: sans-serif;
+    font-size: 14px;
   }
+
 
 header {
   width: 100%;
   position: relative;
-  height: 80px;
+  height: 60px;
+  background: linear-gradient(white,#f6f6f6);
 }
 
 .firstlinelinks {
   position: absolute;
   top: 0;
   right: 10px;
+  display: inline;
+
 }
-img {
+.firstlinelinks a, .menu1 a, .menu2 a, aside ul li a, .toc ul li a {
+    text-decoration: none;
+    margin: 2px;
+    color: blue;
+}
+.firstlinelinks a:hover, .menu1 a:hover, .menu2 a:hover, aside ul li a:hover, .toc ul li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.wikipedialogo {
   width: 110px;
   margin: 10px;
 }
-
-.menu1 {
+.menu1, .menu2 {
   position: absolute;
-  left: 300px;
-  top: 30px;
+  top: 38px;
 }
+.menu1 a, .menu2 a{
+  border-left: 1px solid #b3ecff;
+}
+.menu1 {
+  top: 44px;
+  left: 158px;
+  margin: 0px;
+  z-index: 1;
+}
+.menu1 a:nth-child(1) {
+    background-color: white;
+    padding: 2px;
+}
+.menu1 a:nth-child(2) {
+    margin-left: -5px;
+    border-right: 1px solid #b3ecff;
+  }
 .menu2 {
-  position: absolute;
   right: 10px;
- top: 30px;
- display: flex;
+}
+.menu2 form{
+  display: inline;
 }
 aside {
   min-width: 160px;
   margin-top: 50px;
-  padding-top: 20px;
+  padding-top: 30px;
 }
-ul {
+aside ul{
   list-style: none;
+  margin-left: -10px;
+}
+aside p {
+  margin-bottom: -10px;
+}
+aside ul:first-child {
+  margin-left: -20px;
 }
 .container {
   display: flex;
@@ -45,4 +83,68 @@ main {
   background-color: white;
   border-left: 1px solid #b3ecff;
   border-top: 1px solid #b3ecff;
+  border-bottom: 1px solid #b3ecff;
+  position: relative;
+  padding-top: 20px;
+}
+p {
+  color: #333333;
+  margin-left: 20px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+    display: inline;
+    font-family: Georgia;
+    font-weight: normal;
+    margin-left: 20px;
+  }
+
+hr {
+  width:98%;
+}
+span, span a {
+  color: blue;
+}
+
+.toc {
+  border: 1px solid grey;
+  width: 150px;
+  background: #f6f6f6;
+  margin: 20px;
+}
+.toc ul {
+  list-style: none;
+  margin-left: -20px;
+}
+.profilepic {
+  border: 1px solid grey;
+  padding: 20px;
+  font-size: 88%;
+  background: #f6f6f6;
+  float: right;
+  width: 250px;
+  text-align: center;
+}
+td {
+  text-align: left;
+}
+.profilepic tr th{
+  float:left;
+  font-weight: bold;
+}
+#Early_life {
+  padding-top: 100px;
+}
+main div + p {
+  font-size: 88%;
+}
+main div + p + p {
+  margin-left: 80px;
+}
+
+footer {
+  width: 90%;
+  position: absolute;
+  left: 170px;
 }
