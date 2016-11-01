@@ -3,10 +3,10 @@ form {
   width: 800px;
   background-color: #ddccff;
   font-family: "Segoe UI";
+  padding-bottom: 30px;
 }
 h3 {
   font-size: 20px;
-  font-family:  "Segoe UI";
   font-weight: 600;
   color: #33334d;
   margin-left: 76px;
@@ -15,10 +15,13 @@ h3 {
 
 h4 {
   color:#33334d;
-  margin-bottom: 0px;
+  margin-bottom: 5px;
+}
+span {
+  color: red;
 }
 
-p {
+p, .termsAndConditions a, button[type=reset], .custom-file-upload {
   color:#52527a;
 }
 
@@ -32,7 +35,6 @@ h2 {
 
 .dateGender {
   display: flex;
-  flex-wrap: nowrap;
 }
 
 .brandnames {
@@ -48,7 +50,7 @@ h2 {
 .firstcolumn, .secondcolumn {
   width: 300px;
 }
-input[type=text], input[type=tel], input[type=email], input[type=url], input[type=text] {
+input[type=text], input[type=tel], input[type=email], input[type=url] {
   width: 97%;
   padding: 3px;
 }
@@ -70,9 +72,50 @@ input[type=checkbox] {
 textarea {
   width: 99%;
   height: 200px;
-
+  resize: vertical;
+}
+input:focus, textarea:focus {
+border-color: blue;
+}
+.custom-file-upload {
+border: 1px solid #52527a;
+display: inline-block;
+width: 150px;
+padding: 6px 50px;
+cursor: pointer;
+background: linear-gradient(white 70%,grey);
+margin-top: 10px;
+border-radius: 2px;
+}
+input[type=file]  {
+    display: none;
+}
+.termsAndConditions {
+  margin-top: 20px;
 }
 
+button {
+  text-transform: uppercase;
+  padding: 14px auto;
+  border-radius: 4px;
+  margin: auto 10px;
+}
+button[type=submit] {
+  background-color: #33334d;
+  color: white;
+  font-size: 24px;
+  height: 60px;
+  width: 180px;
+}
+button[type=reset] {
+  font-size: 16px;
+  background: linear-gradient(white 70%,grey);
+  height: 60px;
+  width: 160px;
+  border: 1px solid #52527a;
+}
 footer {
   display: flex;
+  margin: 10px 0 30px 0;
+  justify-content: space-between;
 }

@@ -20,19 +20,16 @@ header {
 .flex-container {
   display: flex;
 }
-
 .orangebox {
   min-width: 100px;
   height: 600px;
   background-color: orange;
-
 }
 main {
   width: 100%;
   background-color: red;
   margin: 0 20px;
   position: relative;
-
 }
 .blackbox{
   background-color: black;

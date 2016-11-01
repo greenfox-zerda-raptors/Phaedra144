@@ -24,8 +24,9 @@ header {
     text-decoration: none;
     margin: 2px;
     color: blue;
-}
-.firstlinelinks a:hover, .menu1 a:hover, .menu2 a:hover, aside ul li a:hover, .toc ul li a:hover {
+  }
+
+.firstlinelinks a:hover, .menu1 a:hover, .menu2 a:hover, aside ul li a:hover, .toc ul li a:hover, a:hover {
     cursor: pointer;
     text-decoration: underline;
 }
@@ -37,6 +38,7 @@ header {
 .menu1, .menu2 {
   position: absolute;
   top: 38px;
+  background: linear-gradient(white,#f6f6f6);
 }
 .menu1 a, .menu2 a{
   border-left: 1px solid #b3ecff;
@@ -103,8 +105,12 @@ h1, h2, h3 {
 hr {
   width:98%;
 }
-span, span a {
+span, span a, a {
   color: blue;
+  margin-left: 5px;
+}
+.black {
+  color: #333333;
 }
 
 .toc {
@@ -125,6 +131,7 @@ span, span a {
   float: right;
   width: 250px;
   text-align: center;
+  margin-right: 10px;
 }
 td {
   text-align: left;
@@ -141,10 +148,15 @@ main div + p {
 }
 main div + p + p {
   margin-left: 80px;
+  font-style: italic;
 }
 
 footer {
-  width: 90%;
+  width: 80%;
+  font-size: 80%;
   position: absolute;
   left: 170px;
+}
+footer span a {
+  margin-left: 15px;
 }

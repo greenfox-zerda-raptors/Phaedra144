@@ -20,7 +20,6 @@ header {
 div {
   float: left;
 }
-
 .orangebox {
   width: 100px;
   height: 600px;
@@ -47,8 +46,6 @@ main {
   height: 600px;
   background-color: purple;
 }
-
-
 footer {
   width: 600px;
   height: 80px;
