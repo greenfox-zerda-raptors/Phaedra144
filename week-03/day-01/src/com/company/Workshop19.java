@@ -1,7 +1,7 @@
 package com.company;
 
 /**
- * Created by bedij on 2016. 11. 02..
+ * Created by ${SzilviaB} on 2016. 11. 02..
  */
 public class Workshop19 {
     public static void main(String... args){
