@@ -14,8 +14,8 @@ public class Workshop37 {
         // The # character should be replacable, hence store it in a variable
         char x = 35;
         String y = "";
-        for (int i = 0; i < 5; i++) {
-            for (int h = 0; h < 4; h++) {
+        for (int i = 0; i < 7; i++) {
+            for (int h = 0; h < 6; h++) {
                 if (i % 2 == 1) {
                     y = x + " ";
                     System.out.print(y);
