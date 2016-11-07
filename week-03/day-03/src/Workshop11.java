@@ -9,8 +9,8 @@ public class Workshop11 {
         {
             System.out.println(ah[i] + "a");
         }
-
-
-        System.out.println();
+//
+//
+//        System.out.println();
     }
 }

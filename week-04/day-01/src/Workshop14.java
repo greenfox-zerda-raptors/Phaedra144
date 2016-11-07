@@ -10,11 +10,11 @@ public class Workshop14 {
         ListIterator<String> items = al.listIterator();
         for( ;items.hasNext(); )
         {
-            String s = items.next();
-            items += "a";
-
+            String s = items.next() + "a";
+            System.out.println(s);
+//            System.out.println(items.next() + "a");
         }
 
-        System.out.println(al);
+
     }
 }
