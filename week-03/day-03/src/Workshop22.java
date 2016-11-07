@@ -6,6 +6,7 @@ public class Workshop22 {
     public static void main(String... args) {
         // create a function which prints the input String parameters (can have multiple number of arguments)
         typeIn();
+//        https://www.tutorialspoint.com/javaexamples/method_varargs1.htm
 
     }
     public static void typeIn(){
