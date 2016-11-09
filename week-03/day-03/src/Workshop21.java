@@ -10,7 +10,7 @@ public class Workshop21 {
         if(num == 1){
             return 1;
         }
-        return num * (fact(num-1));
+        return num * (fact(num-1)); /*egyel kisebbet hívunk meg, de önmagával még fel kel szorozni, mert ez az utolsó lépés kimarad*/
     }
 //    public static int fact4(int 4) {
 //        if(4 == 1){
