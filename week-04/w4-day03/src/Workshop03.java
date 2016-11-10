@@ -29,7 +29,7 @@ public class Workshop03 {
 
         if (num != 0) {
             String halfNumber = Integer.toString(num);
-            System.out.println("Yum " + halfNumber.substring(0,2));
+            System.out.println("Yum " + halfNumber.substring(0, halfNumber.length()/2));
         }
         else {
             System.out.println("Bye!");
@@ -38,9 +38,9 @@ public class Workshop03 {
     }
     public static int checkInputNum() {
         try {
-            return userInput.nextInt();
+            return userInput.nextInt(); /*probalja meg visszaadni a bemeno erteket, ha helyes*/
         } catch (InputMismatchException e) {
-            System.out.println("Too High");
+            System.out.println("Not valid number or too long\n" + e.getMessage());
             return 0;
         }
 
