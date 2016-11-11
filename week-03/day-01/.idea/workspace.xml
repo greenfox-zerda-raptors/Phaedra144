@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="830ef053-f12f-4445-911f-f435cdca36ed" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop01arraylist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop02arraytoarraylist.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop03.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop04.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop05arraylisttoarray.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop06.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop07.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop08.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop09.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop10.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop11.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop12.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop13iteratorforloop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop14.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop15.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop16.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop17.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop18longshortname.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop19stringbuilderaddrename.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop20.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop21.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop22.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/Workshop23.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../week-04/day-01/src/arraylistbegins.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../day-03/src/Workshop19.java" afterPath="$PROJECT_DIR$/../day-03/src/Workshop19.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../day-03/src/Workshop21.java" afterPath="$PROJECT_DIR$/../day-03/src/Workshop21.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../day-03/src/Workshop22.java" afterPath="$PROJECT_DIR$/../day-03/src/Workshop22.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../day-03/src/Workshop23.java" afterPath="$PROJECT_DIR$/../day-03/src/Workshop23.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/w4-day04/out/production/w4-day04/GuessRandomly.class" afterPath="$PROJECT_DIR$/../../week-04/w4-day04/out/production/w4-day04/GuessRandomly.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/w4-day04/.idea/misc.xml" afterPath="$PROJECT_DIR$/../../week-04/w4-day04/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/w4-day04/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../week-04/w4-day04/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../week-04/w4-day04/src/GuessRandomly.java" afterPath="$PROJECT_DIR$/../../week-04/w4-day04/src/GuessRandomly.java" />
     </list>
     <ignored path="day-01.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -238,11 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,6 +250,11 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -818,11 +793,12 @@
       <workItem from="1478253577736" duration="281000" />
       <workItem from="1478617462178" duration="27000" />
       <workItem from="1478619978059" duration="12000" />
+      <workItem from="1478810703428" duration="615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27443000" />
+    <option name="totallyTimeSpent" value="28058000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +811,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -848,7 +824,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.4968896" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16946565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16946565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496112" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
