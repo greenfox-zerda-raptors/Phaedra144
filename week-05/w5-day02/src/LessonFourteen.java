@@ -4,7 +4,7 @@ public class LessonFourteen{
 
         // I create a Animal object named genericAnimal
 
-        Animal genericAnimal = new Animal();
+        Animalbana genericAnimal = new Animalbana();
         System.out.println(genericAnimal.getName());
         System.out.println(genericAnimal.favFood);
 
@@ -19,18 +19,15 @@ public class LessonFourteen{
 
         // You can also create classes based on the super class
 
-        Animal tabby = new Cat("Tabby", "Salmon", "Ball");
+        Animalbana tabby = new Cat("Tabby", "Salmon", "Ball");
 
         // You pass objects like any other field
         acceptAnimal(tabby);
-
     }
 
-    public static void acceptAnimal(Animal randAnimal){
+    public static void acceptAnimal(Animalbana randAnimal){
 
         // Gets the name and favFood for the Animal passed
-        System.out.println(randAnimal.getName());
-        System.out.println(randAnimal.favFood);
 
         // This is Polymorphism
         // The interpreter automatically figures out what type

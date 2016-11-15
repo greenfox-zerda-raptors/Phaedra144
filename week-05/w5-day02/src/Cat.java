@@ -4,7 +4,7 @@
 // This is known as inheritance because Cat inherits all
 // the methods and fields defined in Animal
 
-public class Cat extends Animal{
+public class Cat extends Animalbana{
 
     // You can add new fields to the subclass
     public String favToy = "Yarn";

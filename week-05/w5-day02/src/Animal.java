@@ -1,50 +1,41 @@
-// Animal will act as a Super class for other Animals
+/**
+ * Created by ${SzilviaB} on 2016. 11. 15..
+ */
 public class Animal {
+    int lifeExpectancy;
+    boolean isCarnivore;
 
-    private String name = "Animal";
-    public String favFood = "Food";
-
-    // You use protected when you want to allow subclasses
-    // To be able to access methods or fields
-    // If you would have used private their would be no
-    // way for subclasses to call this method
-    // This is a final method which means it can't be overwritten
-
-    protected final void changeName(String newName){
-
-        // this is a reference to the object you're creating
-
-        this.name = newName;
-
+    public Animal() {
+        this.lifeExpectancy = 10;
+        this.isCarnivore = false;
+        System.out.println("An animal is created.");
+    }
+    public Animal(String type, int lifeExpectancy, boolean isCarnivore) {
+        this.lifeExpectancy = lifeExpectancy;
+        this.isCarnivore = isCarnivore;
+        System.out.println(type);
     }
 
-    protected final String getName(){
-
-        return this.name;
-
+//    public Animal (String type){
+//        this();
+//        System.out.println( type + " animal is created.");
+//    }
+    public void speak(){
+        System.out.println("speaks");
     }
 
-    public void eatStuff(){
-
-        System.out.println("Yum " + favFood);
-
+    public String toString(){
+        return String.format("isCarnivore=%b,lifeExpectancy=%d", isCarnivore, lifeExpectancy);
     }
 
-    public void walkAround(){
 
-        System.out.println(this.name + " walks around");
-
+    public void sleep (){
+        System.out.println("The animal is sleeping.");
     }
 
-    public Animal(){
-
+    public void eat (){
+        System.out.println("The animal is eating.");
     }
 
-    public Animal(String name, String favFood){
-
-        this.changeName(name);
-        this.favFood = favFood;
-
-    }
 
 }
