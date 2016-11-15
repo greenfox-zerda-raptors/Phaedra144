@@ -23,17 +23,6 @@ import java.util.*;
 
 public class Workshop07 {
 
-    public static void myMethod(int testnum) throws Exception //függvényen belül nem kezelem a hibát, ezért kell a throws Exception, ha belül kezelném, akkor nem kellene something should appear here before
-    {
-
-        if (testnum == 7) {// do that thing that chucks the reprobate out
-            Exception e = new Exception();
-            throw e;
-        }
-
-
-    }
-
 
     public static void main(String[] args) {
 
@@ -54,7 +43,17 @@ public class Workshop07 {
                 } catch (Exception ex) {
                     System.out.println("An Exception");
                 }
-            } //while
-        } // main
-    } //Workshop07
+            }
+        }
+    }
+    public static void myMethod(int testnum) throws Exception //függvényen belül nem kezelem a hibát, ezért kell a throws Exception, ha belül kezelném, akkor nem kellene
+    {
+
+        if (testnum == 7) {// do that thing that chucks the reprobate out
+            Exception e = new Exception();
+            throw e;
+        }
+
+
+    }
 }

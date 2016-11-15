@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -11,14 +12,19 @@ public class GuessRandomly {
     static ArrayList<Integer> guesses = new ArrayList<Integer>();
 
     static int randomNumber;
+    static boolean invalidNumber;
+
 
     public static void main(String[] args) {
-
+        int yourTopNum = 0;
         boolean playing = true;
-        int counter = 0;
-        System.out.println("Enter a top number in the range, or 0? ");
+        invalidNumber = true;
+        while (invalidNumber) {
+            System.out.println("Enter a top number in the range: ");
 
-        int yourTopNum = inputNum.nextInt();
+            yourTopNum = checkInputNum();
+        }
+
         while (playing == true) {
 
 
@@ -34,33 +40,33 @@ public class GuessRandomly {
 
                 if (guesses.contains(yourGuess)) {
 
-                    System.out.println("You wrote the same number again. I am so generous I give you another chance, you numskull. ");
+                    System.out.println("Great, you wrote the same number again.");
+                    System.out.println("I give you another chance, 'cause you don't seem too sharp. ");
                     continue;
                 } else {
                     guesses.add(yourGuess);
                 }
 
-                if (yourGuess > randomNumber) {
+                if (yourGuess > randomNumber && (guesses.size() != 6)) {
                     System.out.println("Nope, you're high. You've got " + max-- + " guesses left.");
-                } else if (yourGuess < randomNumber) {
+                } else if (yourGuess < randomNumber && (guesses.size() != 6)) {
                     System.out.println("Nope, you're low. You've got " + max-- + " guesses left.");
                 } else {
-                    if (guesses.size() == 1 || guesses.size() == 2 || guesses.size() == 3 )
+                    if (guesses.size() == 1 || guesses.size() == 2 || guesses.size() == 3)
                         System.out.println("Congratulation, you guessed it in " + guesses.size() + " go!");
-
-                    else System.out.println("Yippee, I was running out of insults.");
+                    else if (yourGuess == randomNumber) System.out.println("Yippee, I almost gave up on you.");
                     break;
                 }
 
                 // ide csak akkor ér el a kód, ha az előző if első két ágába futott bele
                 if (guesses.size() == 4) {
-                    System.out.println("You know, you seem like you are getting more desperate, running out of guesses soon. Next?");
+                    System.out.println("You seem are getting more desperate, running out of guesses soon. Next?");
                 }
                 if (guesses.size() == 5) {
                     System.out.println("I hope you are not planning a fortune teller career! Next?");
                 }
-                else if (guesses.size() == 6) {
-                    System.out.println("Finally you couldn't figure out my number, mazbe next time, my slow friend.");
+                if (guesses.size() == 6) {
+                    System.out.println("You couldn!t figure out my number, dumbass!");
                 }
             }
 
@@ -69,6 +75,8 @@ public class GuessRandomly {
             int nextGame = inputNum.nextInt();
             if (nextGame != 0) {
                 playing = true;
+                yourTopNum = nextGame;
+                guesses.clear();
             } else {
                 playing = false;
                 System.out.println("It was fun playing. Bye!");
@@ -82,9 +90,20 @@ public class GuessRandomly {
         // Creates a random number between 0 and 50
         // Since randomNumber is a class variable you don't have to declare, or define its type
         // If int randomNumber was declared in this method it wouldn't effect the global variable named randomNumber
-        randomNumber = (int) (Math.random() * yourTopNum + 1);
+        randomNumber = (int) (Math.random() * yourTopNum);
         return randomNumber;
 
+    }
+
+    public static int checkInputNum() {
+        try {
+            int result = Integer.parseInt(inputNum.nextLine());
+            invalidNumber = false;
+            return result;
+        } catch (NumberFormatException e) {
+            System.out.println("Not valid number or too long\n" + e.getMessage());
+            return 10;
+        }
     }
 
 }

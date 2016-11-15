@@ -16,7 +16,7 @@ public class Streams_of_data {
 
         // PrintWriter is used to write characters to a file in this situation
 
-        PrintWriter custOutput = createFile("/Users/derekbanas/Documents/workspace3/Java Code/src/customers.txt");
+        PrintWriter custOutput = createFile("/F:/Szilvia/Greenfox/JavaBits/customers.txt");
 
         // Enhanced for loop for arrays
         // Cycles through all of the people in the customers array
@@ -85,9 +85,7 @@ public class Streams_of_data {
             // them all at one time (Speeds up the Program)
             // PrintWriter is used to write characters to the console, file
 
-            PrintWriter infoToWrite = new PrintWriter(
-                    new BufferedWriter(
-                            new FileWriter(listOfNames)));
+            PrintWriter infoToWrite = new PrintWriter(new BufferedWriter(new FileWriter(listOfNames)));
             return infoToWrite;
         }
 
@@ -129,7 +127,7 @@ public class Streams_of_data {
 
         // Open a new connection to the file
 
-        File listOfNames = new File("/Users/derekbanas/Documents/workspace3/Java Code/src/customers.txt");
+        File listOfNames = new File("/F:/Szilvia/Greenfox/JavaBits/customers.txt");
 
         try {
 
