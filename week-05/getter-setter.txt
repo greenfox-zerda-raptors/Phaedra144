@@ -1,0 +1,10 @@
+a getter meg a setter arra jó
+hogy ha van egy osztályodban egy mezõd, akkor azon keresztül érd el
+az objektumon
+
+és pl ezáltal lehet olyanokat variálni
+hogy az objektumodon van egy privát mezõd
+amihez van egy publikus getter és egy privát setter
+az pl arra jó, hogy lekérdezni le tudja egy másik objektum
+de módosítani nem
+azt csak az objektum tudja önmagának

@@ -1,0 +1,29 @@
+szóval a static az azt jelöli h osztályszintû mondjuk egy field
+tehát minden egyes belõle példányosított objektumban ugyanaz az érték
+mondjuk ha már az ember példánál tartunk akkor
+class Human { static int numberOfEyes = 2; }
+ha bármelyik objektumán elkéred a numberOfEyes-t, kettõt kapsz
+és ha ezt megváltoztatod 3-ra
+akkor mindenhol megváltozik
+
+ez kicsit lejjebb, fizikai szinten úgy néz ki, hogy amikor az ember osztályt definiálod, a memóriában lesz ott egy db kettes a static fieldnél
+viszont ha csinálsz belõle ember objektumokat, különbözõeket, amiknek van nem static fieldje is
+akkor objektumonként külön külön beíródik a memóriába annak az értéke
+mittomén mondjuk életkor
+tehát ha egy objektumból elkéred az életkort, akkor az a saját magának beírt számot adja vissza
+
+akkor, ha újradefiniálom Human. age = 50-el, akkor Szilvi és Feri is 50 lesz?
+
+nem, mert az age nem static
+ez azt jelenti, hogy az age az nem általánosságban a human osztály tulajdonsága
+hanem a human osztály egyes példányainak tulajdonsága
+ezért nem tudsz olyat mondani h Human.age = 50
+csak azt h Feri.age = 50
+meg Szilvi.age = 50
+szóval kicsit úgy kell elképzelni a static - nem static különbséget
+hogy a nem static mezõk írják le az individuális jellemzõket
+név, életkor, magasság
+a static mezõk pedig azokat, amik az adott osztály minden elemére igazak
+pl két szeme van
+két lába van
+ilyesmi
