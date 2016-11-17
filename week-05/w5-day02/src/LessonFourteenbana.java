@@ -1,4 +1,4 @@
-public class LessonFourteen{
+public class LessonFourteenbana {
 
     public static void main(String[] args){
 
@@ -9,8 +9,8 @@ public class LessonFourteen{
         System.out.println(genericAnimal.favFood);
 
 
-        // I create a Cat class like any other
-        Cat morris = new Cat("Morris", "Tuna", "Rubber Mouse");
+        // I create a Catbana class like any other
+        Catbana morris = new Catbana("Morris", "Tuna", "Rubber Mouse");
 
         // Print out the name, favFood and favToy
         System.out.println(morris.getName());
@@ -19,7 +19,7 @@ public class LessonFourteen{
 
         // You can also create classes based on the super class
 
-        Animalbana tabby = new Cat("Tabby", "Salmon", "Ball");
+        Animalbana tabby = new Catbana("Tabby", "Salmon", "Ball");
 
         // You pass objects like any other field
         acceptAnimal(tabby);
@@ -41,21 +41,21 @@ public class LessonFourteen{
         // System.out.println(randAnimal.favToy); Throws an ERROR
 
         // If you want access to fields or methods only found
-        // in the Cat class you have to cast the object to
+        // in the Catbana class you have to cast the object to
         // that specific class first
-        Cat tempCat = (Cat) randAnimal;
+        Catbana tempCatbana = (Catbana) randAnimal;
 
-        System.out.println(tempCat.favToy);
+        System.out.println(tempCatbana.favToy);
 
         // You could also cast the object directly like this
-        System.out.println(((Cat) randAnimal).favToy);
+        System.out.println(((Catbana) randAnimal).favToy);
 
         // You can use instanceof to check what type of object
         // you have. This results in a positive for Animal
-        // and for Cat
-        if (randAnimal instanceof Cat)
+        // and for Catbana
+        if (randAnimal instanceof Catbana)
         {
-            System.out.println(randAnimal.getName() + " is a Cat");
+            System.out.println(randAnimal.getName() + " is a Catbana");
         }
 
     }

@@ -55,7 +55,7 @@ public class GuessRandomly {
                     if (guesses.size() == 1 || guesses.size() == 2 || guesses.size() == 3)
                         System.out.println("Congratulation, you guessed it in " + guesses.size() + " go!");
                     else if (yourGuess == randomNumber) System.out.println("Yippee, I almost gave up on you.");
-                    break;
+                    else System.out.println("You couldn!t figure out my number, dumbass!") ;
                 }
 
                 // ide csak akkor ér el a kód, ha az előző if első két ágába futott bele
@@ -65,17 +65,17 @@ public class GuessRandomly {
                 if (guesses.size() == 5) {
                     System.out.println("I hope you are not planning a fortune teller career! Next?");
                 }
-                if (guesses.size() == 6) {
-                    System.out.println("You couldn!t figure out my number, dumbass!");
-                }
+
+            }
+            invalidNumber = true;
+            while (invalidNumber) {
+                System.out.println("Try again?  Enter a top number in the range, or 0?");
+
+                yourTopNum = checkInputNum();
             }
 
-
-            System.out.println("Try again?  Enter a top number in the range, or 0?");
-            int nextGame = inputNum.nextInt();
-            if (nextGame != 0) {
+            if (yourTopNum != 0) {
                 playing = true;
-                yourTopNum = nextGame;
                 guesses.clear();
             } else {
                 playing = false;

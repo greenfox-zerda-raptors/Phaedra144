@@ -46,7 +46,7 @@ public class CreditCard implements CreditCardy {
     @Override
     public int cumeSumCVV(String codeAccount) {
         for (int i = 0; i < codeAccount.length(); i++){
-            sumCVV += Integer.parseInt(codeAccount.valueOf(codeAccount.charAt(i)));
+            sumCVV += Integer.parseInt(String.valueOf(codeAccount.charAt(i)));
         }
 
         return sumCVV;

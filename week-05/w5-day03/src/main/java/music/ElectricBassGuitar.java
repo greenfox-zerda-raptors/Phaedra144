@@ -6,12 +6,12 @@ package main.java.music;
 public class ElectricBassGuitar extends StringedInstrument {
 
     public ElectricBassGuitar (){
-        this(4);
+        super("Electric Bass Guitar",4, "duum-duum-duum");
     }
 
     public ElectricBassGuitar(int numberOfStrings) {
-        this.name = "Electric Bass Guitar";
-        this.numberOfStrings = numberOfStrings;
-        this.sound = "duum-du-dum";
+        super("Electric Bass Guitar", numberOfStrings, "twangs");
     }
+
+
 }

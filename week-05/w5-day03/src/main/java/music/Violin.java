@@ -6,12 +6,7 @@ package main.java.music;
 public class Violin extends StringedInstrument {
 
     public Violin(){
-        this(4);
+        super("Violin",4, "screeches");;
     }
 
-    public Violin(int numberOfStrings) {
-        this.name = "Violin";
-        this.numberOfStrings = numberOfStrings;
-        this.sound = "screeches";
-    }
 }

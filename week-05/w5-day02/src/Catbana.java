@@ -1,10 +1,10 @@
 // Cat is a Subclass of Animal
 // You create subclasses with the extends keyword
-// Now Cat has all the Methods and Fields that Animal defined
-// This is known as inheritance because Cat inherits all
+// Now Catbana has all the Methods and Fields that Animal defined
+// This is known as inheritance because Catbana inherits all
 // the methods and fields defined in Animal
 
-public class Cat extends Animalbana{
+public class Catbana extends Animalbana{
 
     // You can add new fields to the subclass
     public String favToy = "Yarn";
@@ -19,7 +19,7 @@ public class Cat extends Animalbana{
     // Here I overrode the Animal walkAround method
     public void walkAround(){
 
-        // this refers to a specific object created of type Cat
+        // this refers to a specific object created of type Catbana
 
         System.out.println(this.getName() + " stalks around and then sleeps");
 
@@ -31,17 +31,17 @@ public class Cat extends Animalbana{
 
     }
 
-    public Cat(){
+    public Catbana(){
 
     }
 
-    public Cat(String name, String favFood, String favToy){
+    public Catbana(String name, String favFood, String favToy){
 
         // super calls the constructor for the super class Animal
 
         super(name, favFood);
 
-        // We set the favToy value in Cat because it doesn't
+        // We set the favToy value in Catbana because it doesn't
         // exist in the Animal class
 
         this.favToy = favToy;

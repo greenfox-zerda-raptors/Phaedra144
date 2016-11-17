@@ -9,30 +9,34 @@ public class Car03 {
     private int kmOdometer;
     private String type;
 
+    public int bla;
+
     //Add something here to access the various fields, itt hozzuk letre a prototipust
     public Car03(){
-        engine = 2800;
-        colour = "green";
-        type = "Beamer";
-        kmOdometer = 42521;
+        this.engine = 2800;
+        this.colour = "green";
+        this.type = "Beamer";
+        this.kmOdometer = 42521;
     }
     //getters to refer myCar the basic prototype
 
     public String getType() {
-        return type;
+        return this.type;
     }
 
     public String getColour() {
-        return colour;
+        return this.colour;
     }
 
     public int getEngine() {
-        return engine;
+        return this.engine;
     }
 
     public int getKmOdometer() {
-        return kmOdometer;
+        return this.kmOdometer;
     }
+
+    public int getBla() { return this.bla; }
 
 
 

@@ -8,7 +8,8 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
     Reservation reservation;
 
     public CreditCardReservation(String dowBooking,String nameCardholder, String codeAccount) {
-
+        this.creditCard = new CreditCard(nameCardholder, codeAccount);
+        this.reservation = new Reservation(dowBooking);
     }
 
 
@@ -19,7 +20,7 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
 
     @Override
     public int getSumCVV() {
-        return creditCard.getSumCVV();
+        return this.creditCard.getSumCVV();
     }
 
     @Override
@@ -30,7 +31,7 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
 
     @Override
     public String getNameCardholder() {
-        return creditCard.getNameCardholder();
+        return this.creditCard.getNameCardholder();
     }
 
     @Override
@@ -40,7 +41,7 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
 
     @Override
     public String getCodeAccount() {
-        return creditCard.getCodeAccount();
+        return this.creditCard.getCodeAccount();
     }
 
     @Override
@@ -60,7 +61,7 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
 
     @Override
     public String getDowBooking() {
-        return reservation.getDowBooking();
+        return this.reservation.getDowBooking();
     }
 
     @Override
@@ -70,7 +71,7 @@ public class CreditCardReservation implements CreditCardy, Reservationy {
 
     @Override
     public String getCodeBooking() {
-        return reservation.getCodeBooking();
+        return this.reservation.getCodeBooking();
     }
 
     @Override
