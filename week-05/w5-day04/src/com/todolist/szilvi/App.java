@@ -11,8 +11,8 @@ public class App {
 
     public static void main(String[] args) {
         ToDoList tasks = new ToDoList();
-        tasks.add("Walk the dog");
-        tasks.add("Go shopping");
+//        tasks.add("Walk the dog");
+//        tasks.add("Go shopping");
         menu();
 
         while(true) {
@@ -29,10 +29,13 @@ public class App {
                 int z = Integer.parseInt(command[1]);
                 tasks.complete(z);
             } else if (command[0].contentEquals("help")) {
-                menu();
-            } else if (command[0].contentEquals("exit")) {
+                menu();            }
+            else if (command[0].contentEquals("save")){
+                tasks.writeList();            }
+            else if (command[0].contentEquals("exit")) {
                 break;
             }
+
         }
 
     }

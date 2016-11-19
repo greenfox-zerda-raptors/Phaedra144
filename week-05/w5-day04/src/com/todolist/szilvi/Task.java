@@ -13,8 +13,25 @@ public class Task {
         this.status = false;
     }
 
+    public String proba(){
+        if (status){
+            return "checked;" + this.name;
+        }
+        else {
+            return "not_checked;" + this.name;
+        }
+    }
+
     public void setStatus (boolean status){
         this.status = status;
+    }
+
+    public boolean getStatus() {
+        return this.status;
+    }
+
+    public String getName (){
+        return this.name;
     }
 
     @Override
@@ -25,7 +42,7 @@ public class Task {
         else {
             return ("[ ] " + this.name);
         }
-
-
     }
+
+
 }
