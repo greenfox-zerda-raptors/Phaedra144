@@ -11,6 +11,7 @@ public class UI_Controls extends JFrame implements ActionListener {
     JLabel input;
     JLabel memory;
     JTextField text;
+    JButton clear;
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -23,26 +24,33 @@ public class UI_Controls extends JFrame implements ActionListener {
 
     public UI_Controls() {
         this.setTitle("UI Controls sample");
-        this.setVisible(true);
-        this.setSize(400, 400);
+
+        this.setSize(400, 200);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
 
         JPanel panel = new JPanel();
         this.add(panel);
 
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.setAlignmentX(CENTER_ALIGNMENT);
+        LayoutManager boxLayout = new BoxLayout(panel, BoxLayout.Y_AXIS);
+        panel.setLayout(boxLayout);
+        panel.setBorder(BorderFactory.createMatteBorder(40, 40, 40, 40, panel.getBackground()));
 
-        text = new JTextField("My first input");
+        text = new JTextField("My actual input",10);
         panel.add(text);
+        System.out.println("");
         text.addActionListener(this);
-        text.setMaximumSize();
 
         input = new JLabel("Text: ");
         panel.add(input);
         memory = new JLabel("Memory: ");
         panel.add(memory);
+        Box.createRigidArea(new Dimension(0, 20));
+        clear = new JButton("Clear memory");
+        panel.add(clear);
+        clear.addActionListener(this);
+
 
 
     }
@@ -50,11 +58,15 @@ public class UI_Controls extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        StringBuilder sb = new StringBuilder(input.getText());
-        sb.delete(0, 5);
-        memory.setText("Memory: " + sb);
-        input.setText("Text: " + text.getText());
+        if(e.getSource() == text) {
+            StringBuilder sb = new StringBuilder(input.getText());
+            sb.delete(0, 5);
+            memory.setText("Memory: " + sb);
+            input.setText("Text: " + text.getText());
+        }
+        else {
+            memory.setText("Memory: ");
 
-
+        }
     }
 }
