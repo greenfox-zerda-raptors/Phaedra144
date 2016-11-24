@@ -33,15 +33,15 @@ public class UI_Controls extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
         this.add(panel);
 
-        LayoutManager boxLayout = new BoxLayout(panel, BoxLayout.Y_AXIS);
+        BoxLayout boxLayout = new BoxLayout(panel, BoxLayout.Y_AXIS);
         panel.setLayout(boxLayout);
         panel.setBorder(BorderFactory.createMatteBorder(40, 40, 40, 40, panel.getBackground()));
 
-        text = new JTextField("My actual input",10);
+        text = new JTextField("My actual input");
         panel.add(text);
-        System.out.println("");
         text.addActionListener(this);
 
+        Box.createRigidArea(new Dimension(0, 20));
         input = new JLabel("Text: ");
         panel.add(input);
         memory = new JLabel("Memory: ");
@@ -50,8 +50,6 @@ public class UI_Controls extends JFrame implements ActionListener {
         clear = new JButton("Clear memory");
         panel.add(clear);
         clear.addActionListener(this);
-
-
 
     }
 
