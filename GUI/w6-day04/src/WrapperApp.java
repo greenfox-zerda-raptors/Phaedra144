@@ -29,6 +29,7 @@ public class WrapperApp extends JFrame implements ActionListener {
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         controlpanel = new JPanel();
+        this.add(new ImagePanel());
         this.setJMenuBar(menubar());
 
     }
