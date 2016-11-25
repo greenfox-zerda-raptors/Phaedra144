@@ -1,0 +1,2 @@
+not_checked;Do shopping
+not_checked;Prepare for exam

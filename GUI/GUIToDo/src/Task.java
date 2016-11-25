@@ -1,5 +1,3 @@
-package com.todolist.szilvi;
-
 /**
  * Created by ${SzilviaB} on 2016. 11. 17..
  */

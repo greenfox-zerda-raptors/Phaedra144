@@ -39,10 +39,20 @@ public class WrapperApp extends JFrame implements ActionListener {
 
         filemenu = new JMenu("File");
         menuBar.add(filemenu);
-
         menuItem = new JMenuItem("Exit");
         filemenu.add(menuItem);
         menuItem.addActionListener(this);
+
+        JMenu imagepan = new JMenu("Image");
+        menuBar.add(imagepan);
+        JMenuItem imagepanel = new JMenuItem("Image source");
+        imagepan.add(new ImagePanel());
+
+
+        JMenu eventcount = new JMenu("EventCounter");
+        menuBar.add(eventcount);
+
+
 
 
         return menuBar;
