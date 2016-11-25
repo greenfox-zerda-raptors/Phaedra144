@@ -1,2 +1,4 @@
 not_checked;Do shopping
 not_checked;Prepare for exam
+not_checked;Write your new task here
+not_checked;gdjggksf

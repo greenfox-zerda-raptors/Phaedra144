@@ -2,20 +2,22 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 /**
  * Created by ${SzilviaB} on 2016. 11. 25..
  */
-public class GUI extends JFrame implements ActionListener {
+public class GUI extends JFrame implements ActionListener, MouseListener {
 
     private JFrame frame1;
     private JPanel panel1;
     private JPanel panel2;
     private JTextField inputField;
     private JTextArea listingArea;
-    private JScrollPane scrollPane;
     private JButton add;
     private JButton remove;
+    private JButton removeAll;
     private JButton save;
     private JButton complete;
     private JButton load;
@@ -33,8 +35,10 @@ public class GUI extends JFrame implements ActionListener {
         inputField = new JTextField("Write your new task here", 20);
         inputField.setMaximumSize(new Dimension(450, 20));
         inputField.setBorder(BorderFactory.createMatteBorder(0, 0, 20, 0, panel1.getBackground()));
+
         listingArea = new JTextArea();
-        listingArea.setMaximumSize(new Dimension(450, 400));
+        listingArea.setEditable(false);
+        listingArea.setMaximumSize(new Dimension(450, 300));
 
         panel1.add(inputField);
         panel1.add(listingArea);
@@ -45,15 +49,23 @@ public class GUI extends JFrame implements ActionListener {
         complete = new JButton("Complete Task");
         load = new JButton("Load Tasks");
         save = new JButton("Save");
+        removeAll = new JButton("Remove All");
 
         panel2.add(add);
         panel2.add(remove);
         panel2.add(complete);
         panel2.add(load);
         panel2.add(save);
+        panel2.add(removeAll);
 
+        inputField.addActionListener(this);
+        inputField.addMouseListener(this);
         load.addActionListener(this);
         add.addActionListener(this);
+        remove.addActionListener((ActionListener)this);
+        complete.addActionListener((ActionListener)this);
+        save.addActionListener(this);
+        removeAll.addActionListener(this);
 
     }
 
@@ -61,33 +73,29 @@ public class GUI extends JFrame implements ActionListener {
         listingArea.append(text + "\n");
     }
 
-    public String getInput() {
-        String input = inputField.getText();
-        inputField.setCaretPosition(0);
-        return input;
-    }
-
     private void createPanels() {
         panel1 = new JPanel();
         panel1.setName("Panel for textfields");
         frame1.add(panel1, BorderLayout.NORTH);
         BoxLayout boxLayout = new BoxLayout(panel1, BoxLayout.Y_AXIS);
+        panel1.setMinimumSize(new Dimension(450, 450));
         panel1.setLayout(boxLayout);
         panel1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         panel2 = new JPanel();
         panel2.setName("Panel for buttons");
         frame1.add(panel2, BorderLayout.SOUTH);
-        panel2.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
+        panel2.setLayout(new GridLayout(2,1));
+        panel2.setBorder(BorderFactory.createEmptyBorder(0, 20, 40, 20));
 
     }
 
     private void createFrame() {
         frame1 = new JFrame("ToDo List");
-        BorderLayout myLayout = new BorderLayout(3, 1);
+        BorderLayout myLayout = new BorderLayout();
         frame1.setLayout(myLayout);
 
-        frame1.setPreferredSize(new Dimension(600, 600));
+        frame1.setPreferredSize(new Dimension(600, 500));
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
         int xPos = (dim.width / 2) - (this.getWidth() / 2);
@@ -111,7 +119,68 @@ public class GUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        printToArea(tasks.getList());
+        if (e.getSource() == load) {
+            printToArea(tasks.getList());
+        }
+        else if (e.getSource() == inputField){
+            listingArea.setText(null);
+            tasks.add(inputField.getText());
+            inputField.setText("");
+            printToArea(tasks.getList());
+        }
+
+        else if (e.getSource() == add) {
+            listingArea.setText(null);
+            tasks.add(inputField.getText());
+            inputField.setText("");
+            printToArea(tasks.getList());
+        }
+
+        else if (e.getSource() == remove){
+            int y = Integer.parseInt(inputField.getText());
+            tasks.remove(y);
+            inputField.setText("");
+            printToArea(tasks.getList());
+        }
+
+        else if (e.getSource() == complete){
+            int z = Integer.parseInt(inputField.getText());
+            tasks.complete(z);
+            inputField.setText("");
+            printToArea(tasks.getList());
+        }
+
+        else if (e.getSource() == save){
+            tasks.writeList();
+        }
+
+        else if (e.getSource() == removeAll){
+            listingArea.setText("");
+        }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        inputField.setText("");
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 }
