@@ -1,22 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by ${SzilviaB} on 2016. 11. 25..
  */
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener {
 
     private JFrame frame1;
     private JPanel panel1;
     private JPanel panel2;
     private JTextField inputField;
     private JTextArea listingArea;
+    private JScrollPane scrollPane;
     private JButton add;
     private JButton remove;
     private JButton save;
     private JButton complete;
     private JButton load;
 
+    ToDoList tasks = new ToDoList();
 
     public GUI() {
         createFrame();
@@ -29,7 +33,7 @@ public class GUI extends JFrame {
         inputField = new JTextField("Write your new task here", 20);
         inputField.setMaximumSize(new Dimension(450, 20));
         inputField.setBorder(BorderFactory.createMatteBorder(0, 0, 20, 0, panel1.getBackground()));
-        listingArea = new JTextArea("Your ToDo list is empty");
+        listingArea = new JTextArea();
         listingArea.setMaximumSize(new Dimension(450, 400));
 
         panel1.add(inputField);
@@ -48,12 +52,22 @@ public class GUI extends JFrame {
         panel2.add(load);
         panel2.add(save);
 
-
-
+        load.addActionListener(this);
+        add.addActionListener(this);
 
     }
 
-    private void createPanels () {
+    public void printToArea(String text) {
+        listingArea.append(text + "\n");
+    }
+
+    public String getInput() {
+        String input = inputField.getText();
+        inputField.setCaretPosition(0);
+        return input;
+    }
+
+    private void createPanels() {
         panel1 = new JPanel();
         panel1.setName("Panel for textfields");
         frame1.add(panel1, BorderLayout.NORTH);
@@ -70,15 +84,15 @@ public class GUI extends JFrame {
 
     private void createFrame() {
         frame1 = new JFrame("ToDo List");
-        BorderLayout myLayout = new BorderLayout(3,1);
+        BorderLayout myLayout = new BorderLayout(3, 1);
         frame1.setLayout(myLayout);
 
         frame1.setPreferredSize(new Dimension(600, 600));
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
-        int xPos = (dim.width / 2) - (frame1.getWidth() / 2);
-        int yPos = (dim.height / 2) - (frame1.getHeight() / 2);
-        frame1.setLocation(xPos, yPos);
+        int xPos = (dim.width / 2) - (this.getWidth() / 2);
+        int yPos = (dim.height / 2) - (this.getHeight() / 2);
+        this.setLocation(xPos, yPos);
 
 //        frame1.setResizable(false);
         frame1.setVisible(true);
@@ -95,4 +109,9 @@ public class GUI extends JFrame {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        printToArea(tasks.getList());
+
+    }
 }

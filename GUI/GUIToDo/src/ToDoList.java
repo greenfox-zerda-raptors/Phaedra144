@@ -38,12 +38,17 @@ public class ToDoList {
     }
 
 
-    public void getList() {
+    public String getList() {
+        String x = "";
         for (int i = 0; i < myList.size(); i++) {
-            Task items = myList.get(i);
-
-            System.out.println((i + 1) + " - " + items.toString());
+            Task item = myList.get(i);
+            x += String.format("%d - %s \n",(i + 1), item.toString());
         }
+        if (x.length() == 0){
+            x = "Your ToDo list is empty";
+        }
+
+        return x;
     }
 
     public void remove(int i) {
@@ -84,6 +89,5 @@ public class ToDoList {
         }
 
     }
-
 
 }
