@@ -78,14 +78,13 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
         panel1.setName("Panel for textfields");
         frame1.add(panel1, BorderLayout.NORTH);
         BoxLayout boxLayout = new BoxLayout(panel1, BoxLayout.Y_AXIS);
-        panel1.setMinimumSize(new Dimension(450, 450));
         panel1.setLayout(boxLayout);
         panel1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         panel2 = new JPanel();
         panel2.setName("Panel for buttons");
         frame1.add(panel2, BorderLayout.SOUTH);
-        panel2.setLayout(new GridLayout(2,1));
+        panel2.setLayout(new GridLayout(2,1,10,8));
         panel2.setBorder(BorderFactory.createEmptyBorder(0, 20, 40, 20));
 
     }
@@ -95,7 +94,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
         BorderLayout myLayout = new BorderLayout();
         frame1.setLayout(myLayout);
 
-        frame1.setPreferredSize(new Dimension(600, 500));
+        frame1.setPreferredSize(new Dimension(500, 400));
         Toolkit tk = Toolkit.getDefaultToolkit();
         Dimension dim = tk.getScreenSize();
         int xPos = (dim.width / 2) - (this.getWidth() / 2);
@@ -137,6 +136,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
         }
 
         else if (e.getSource() == remove){
+            listingArea.setText(null);
             int y = Integer.parseInt(inputField.getText());
             tasks.remove(y);
             inputField.setText("");
@@ -144,6 +144,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
         }
 
         else if (e.getSource() == complete){
+            listingArea.setText(null);
             int z = Integer.parseInt(inputField.getText());
             tasks.complete(z);
             inputField.setText("");

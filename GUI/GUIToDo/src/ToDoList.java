@@ -60,8 +60,8 @@ public class ToDoList {
         item.setStatus(true);
     }
 
-    public Task createTask(String x) {
-        String[] inputValues = x.split(";", 2);
+    public Task createTask(String str) {
+        String[] inputValues = str.split(";", 2);
         Task t = new Task(inputValues[1]);
         if (inputValues[0].contentEquals("checked")) {
             t.setStatus(true);
