@@ -9,13 +9,15 @@ public class Block extends Rectangle {
         this.length = 1;
     }
 
-//    public Block(int length){
-//        super();
-//    }
-//
-//    public int getLength() {
-//        return length;
-//    }
+    public Block(int length){
+        super();
+        this.length = length;
+    }
+
+
+    public int getLength() {
+        return length;
+    }
 
     public void setLength(int length) {
         this.length = length;
@@ -25,6 +27,8 @@ public class Block extends Rectangle {
         return length*getHeight()*getWidth();
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Block's length = " + getLength() + " and it's volume is = " + getVolume();
+    }
 }

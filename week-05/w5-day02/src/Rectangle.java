@@ -9,10 +9,12 @@ public class Rectangle {
         width = 1;
         height = 1;
     }
-//    public Rectangle(int width){
-//
-//    }
-    public int getArea(int width, int height) {
+    public Rectangle(int width, int height){
+        this.width = width;
+        this.height = height;
+
+    }
+    public int getArea() {
         int area = width * height;
         return area;
     }
@@ -35,5 +37,9 @@ public class Rectangle {
     public void setHeight(int height) {
 
         this.height = height;
+    }
+
+    public String toString() {
+        return String.format("The area of the " + getClass().getSimpleName() + " is %d", getArea());
     }
 }
