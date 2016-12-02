@@ -70,12 +70,16 @@ public class Circle02 {
 
         c1.setRadius(4.0);
         c1.setColour("pink");
-        System.out.println(c1);
+
         System.out.println("The radius is: " + c1.getRadius());
         System.out.println("The color is: " + c1.getColour());
 
+        Cylinder cyl = new Cylinder(5);
+        System.out.println(cyl);
+
         System.out.printf("The area is: %.2f%n", c1.getArea());
         System.out.printf("The circumference is: %.2f%n", c1.getPerimeter());
+        System.out.printf("The volume of cylinder is: %.2f%n", cyl.getVolume());
 
         System.out.println("The number of created circles are = " + Circle02.countObjects());
 
