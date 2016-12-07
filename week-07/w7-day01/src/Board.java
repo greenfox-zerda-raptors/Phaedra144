@@ -1,50 +1,70 @@
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 
 /**
  * Created by ${SzilviaB} on 2016. 12. 05..
  */
-public class Board extends JPanel {
-    ArrayList<Tile> tiles;
-    boolean[][]map = new boolean[][]{
-            {true, false, false, false},
-            {true, false, false, false},
-            {true, false, true, true}
-    };
+public class Board extends JPanel implements KeyListener {
+
+    Hero myhero;
+    Area myarea;
 
 
     public Board() {
-        tiles = new ArrayList<Tile>();
-        for (int k = 0; k < map.length; k++) {
-            for (int j = 0; j < map[k].length; j++) {
-                String imagename = "floor.png";
-                String wallImage = "wall.png";
-                if (map[k][j]){
-                    Tile wall = new Tile(wallImage, k, j);
-                    tiles.add(wall);
-                }
-                else {
-                    Tile image = new Tile(imagename, k, j);
-                    tiles.add(image);
-                }
 
-            }
+        myarea = new Area();
+        myhero = new Hero(0, 0);
 
-        }
-
-        this.setPreferredSize(new Dimension(720, 720));
+        this.addKeyListener(this);
+        this.setPreferredSize(new Dimension(520, 520));
         this.setVisible(true);
+
+
     }
 
-    public void paint(Graphics graphics) {
-//        super.paint(graphics);
-        // here you have a 720x720 canvas
-        // you can create and draw an image using the class below e.g.
-        for (Tile tile : tiles) {
-            tile.draw(graphics);
+    public void addNotify() {
+        super.addNotify();
+        requestFocus();
+    }
 
+
+    public void paint(Graphics graphics) {
+
+        myarea.draw(graphics);
+        myhero.draw(graphics);
+        
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            int check = myarea.getPosition(myhero.getPosX(), myhero.getPosY() + 1);
+            myhero.move("hero-down.png", 0, 1, check);
+        } else if (e.getKeyCode() == KeyEvent.VK_UP) {
+            int check = myarea.getPosition(myhero.getPosX(), myhero.getPosY() - 1);
+            myhero.move("hero-up.png", 0, -1, check);
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            int check = myarea.getPosition(myhero.getPosX() + 1, myhero.getPosY());
+            myhero.move("hero-right.png", 1, 0, check);
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            int check = myarea.getPosition(myhero.getPosX() - 1, myhero.getPosY());
+            myhero.move("hero-left.png", -1, 0, check);
         }
+        repaint();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
 
     }
 }

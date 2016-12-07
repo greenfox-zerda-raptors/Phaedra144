@@ -1,30 +1,24 @@
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
 /**
- * Created by ${SzilviaB} on 2016. 12. 05..
+ * Created by ${SzilviaB} on 2016. 12. 07..
  */
-public class Tile {
-    BufferedImage image;
-    int posX, posY;
+public class Tile extends GameObject {
+    public boolean moveable;
 
-    public Tile(String filename, int posX, int posY) {
-        this.posX = posX;
-        this.posY = posY;
-        try {
-            image = ImageIO.read(new File(filename));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+    public Tile (){
 
     }
 
-    public void draw(Graphics graphics) {
-        if (image != null) {
-            graphics.drawImage(image, posX * 72, posY * 72, null);
-        }
+    public Tile(String filename, int posX, int posY, boolean moveable) {
+        super(filename, posX, posY);
+        this.moveable = moveable;
     }
+    public boolean isMoveable() {
+        return moveable;
+    }
+
+    public void setMoveable(boolean moveable) {
+        this.moveable = moveable;
+    }
+
 }
