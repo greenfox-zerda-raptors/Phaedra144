@@ -12,7 +12,7 @@ public class Area extends GameObject {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 1, 1, 1, 1, 0, 0, 1, 0, 1},
             {0, 1, 0, 0, 1, 0, 1, 0, 0, 1},
-            {0, 0, 0, 0, 1, 1, 1, 0, 1, 1},
+            {0, 0, 0, 0, 1, 0, 1, 0, 1, 1},
             {0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
             {0, 1, 0, 1, 1, 0, 1, 0, 0, 0},
             {0, 1, 0, 0, 0, 0, 1, 1, 0, 1},
@@ -63,8 +63,8 @@ public class Area extends GameObject {
 
     }
 
-//    public Tile getTileofCharacter (Hero tempHero){
+//    public int getPosOfCharacter (Character tempChar){
 //        int x = 0;
-//        x = map.length * tempHero.getPosY() + tempHero.getPosX();
-//      return tiles.get(x);    }
+//        x = map.length * tempChar.getPosY() + tempChar.getPosX();
+//      return x;    }
 }

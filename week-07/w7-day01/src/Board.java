@@ -20,7 +20,7 @@ public class Board extends JPanel implements KeyListener {
         myhero = new Hero(0, 0);
 
         this.addKeyListener(this);
-        this.setPreferredSize(new Dimension(520, 520));
+        this.setPreferredSize(new Dimension(600, 620));
         this.setVisible(true);
 
 
@@ -36,7 +36,7 @@ public class Board extends JPanel implements KeyListener {
 
         myarea.draw(graphics);
         myhero.draw(graphics);
-        
+
 
     }
 
