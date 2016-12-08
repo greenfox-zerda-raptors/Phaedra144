@@ -7,9 +7,27 @@ import java.io.IOException;
  */
 public class Hero extends Character {
 
-    public Hero(String filename, int posX, int posY, int HP, int maxHP, int DP, int SP, int level) {
-        super(filename, posX, posY, HP, maxHP, DP, SP, level);
 
+
+    public Hero(int posX, int posY) {
+        super("hero-down.png", posX, posY, 1, true);
+        maxHP = this.maxHP();
+        currentHP = maxHP;
+        DP = this.DP();
+        SP = this.SP();
+    }
+
+    public int maxHP (){
+        int hp = 20 + 3*rollDice();
+        return hp;
+    }
+    public int DP (){
+        int dp = 2*rollDice();
+        return dp;
+    }
+    public int SP (){
+        int sp = 5*rollDice();
+        return sp;
     }
 
 }
