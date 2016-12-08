@@ -8,26 +8,32 @@ import java.io.IOException;
 public class Hero extends Character {
 
 
-
     public Hero(int posX, int posY) {
         super("hero-down.png", posX, posY, 1, true);
         maxHP = this.maxHP();
         currentHP = maxHP;
         DP = this.DP();
         SP = this.SP();
+        SV = this.SV();
     }
 
-    public int maxHP (){
-        int hp = 20 + 3*rollDice();
+    public int maxHP() {
+        int hp = 20 + 3 * rollDice();
         return hp;
     }
-    public int DP (){
-        int dp = 2*rollDice();
+
+    public int DP() {
+        int dp = 2 * rollDice();
         return dp;
     }
-    public int SP (){
-        int sp = 5*rollDice();
+
+    public int SP() {
+        int sp = 5 * rollDice();
         return sp;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Hero (Level %d) HP: %d/%d | DP: %d | SP: %d", level, currentHP, maxHP, DP, SP);
+    }
 }

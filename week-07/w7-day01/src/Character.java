@@ -7,9 +7,7 @@ public abstract class Character extends GameObject {
 
     Random rand = new Random();
     int dice;
-
-
-    protected int currentHP, maxHP, DP, SP, level;
+    protected int currentHP, maxHP, DP, SP, SV, level;
     protected boolean isAlive;
 
 
@@ -26,6 +24,12 @@ public abstract class Character extends GameObject {
 
     public abstract int SP();
 
+    public int SV (){
+        int sv = 2 * rollDice() + SP;
+        return sv;
+    }
+
+
 
     public void setAlive(boolean alive) {
         isAlive = alive;
@@ -36,6 +40,15 @@ public abstract class Character extends GameObject {
             this.setAlive(false);
         }
     }
+
+    public void strike(Character random){
+        if (random != null && this.SV > random.SV){
+            
+        }
+
+    }
+
+
 
     public int rollDice() {
         dice = rand.nextInt(6) + 1;

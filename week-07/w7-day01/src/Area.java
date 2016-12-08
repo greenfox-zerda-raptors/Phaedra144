@@ -8,8 +8,7 @@ import java.util.Random;
  */
 public class Area extends GameObject {
 
-    ArrayList<Skeleton> skeletons;
-    Random rand = new Random();
+
 
 
     ArrayList<Tile> tiles;
@@ -42,25 +41,9 @@ public class Area extends GameObject {
             }
 
         }
-        createSkeletons();
     }
 
-    public ArrayList<Skeleton> createSkeletons() {
-        skeletons = new ArrayList<Skeleton>();
-        int j = rand.nextInt(4) + 3;
-        for (int i = 0; i < j; i++) {
-            int randomPos = rand.nextInt(map.length) + 1;
-            Skeleton randomSkel = new Skeleton();
-            while (getPosition(randomSkel.getPosX(), randomSkel.getPosY()) == 0) {
-                randomSkel.setPosX(randomPos);
-                randomSkel.setPosY(randomPos + rand.nextInt(3) - 1);
-            }
-            skeletons.add(randomSkel);
 
-        }
-        return skeletons;
-
-    }
 
 
     @Override
@@ -68,9 +51,7 @@ public class Area extends GameObject {
         for (GameObject item : tiles) {
             item.draw(graphics);
         }
-        for (GameObject item2 : skeletons) {
-            item2.draw(graphics);
-        }
+
     }
 
     public int getPosition(int x, int y) {

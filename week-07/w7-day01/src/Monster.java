@@ -3,21 +3,20 @@ import java.util.ArrayList;
 /**
  * Created by ${SzilviaB} on 2016. 12. 08..
  */
-public class Skeleton extends Character {
+public class Monster extends Character {
 
 
 
 
-    public Skeleton() {
-        super("skeleton.png", 0,0, 1, true);
+    public Monster(String filename) {
+        super(filename, 0,0, 1, true);
         maxHP = this.maxHP();
         currentHP = maxHP;
         DP = this.DP();
         SP = this.SP();
+        SV = this.SV();
 
     }
-
-
 
 
     @Override
@@ -35,5 +34,10 @@ public class Skeleton extends Character {
     @Override
     public int SP() {
         return level * rollDice();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Monster (Level %d) HP: %d/%d | DP: %d | SP: %d", level, currentHP, maxHP, DP, SP);
     }
 }
