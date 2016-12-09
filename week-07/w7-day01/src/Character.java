@@ -8,7 +8,7 @@ public abstract class Character extends GameObject {
     Random rand = new Random();
     int dice;
     protected int currentHP, maxHP, DP, SP, SV, level;
-    protected boolean isAlive;
+    protected boolean isAlive = true;
 
 
     public Character(String filename, int posX, int posY, int level, boolean isAlive) {
@@ -35,17 +35,27 @@ public abstract class Character extends GameObject {
         isAlive = alive;
     }
 
-    public void die() {
-        if (this.maxHP <= 0) {
-            this.setAlive(false);
+
+    public void battle(Character randomEnemy){
+        if (randomEnemy != null && this.SV > randomEnemy.DP){
+            randomEnemy.currentHP =- this.SV - randomEnemy.DP;
+            if (randomEnemy.currentHP <= 0){
+                randomEnemy.setAlive(false);
+            }
         }
+        else{
+            randomEnemy.currentHP =- this.SV - randomEnemy.DP;
+            if (this.currentHP <= 0){
+                this.setAlive(false);
+            }
+        }
+
     }
 
-    public void strike(Character random){
-        if (random != null && this.SV > random.SV){
-            
-        }
-
+    public void strike (Character random){
+        if (this.isAlive){
+            random.currentHP = random.currentHP - 2;
+        }        
     }
 
 

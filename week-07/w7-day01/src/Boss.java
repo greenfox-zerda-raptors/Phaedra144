@@ -18,19 +18,19 @@ public class Boss extends Character {
 
     @Override
     public int maxHP() {
-        int hp = 2 * level * rollDice();
+        int hp = 2 * level * rollDice() + rollDice();
         return hp;
     }
 
     @Override
     public int DP() {
-        int dp = (int) ((double)level / 2 * rollDice());
+        int dp = (int) ((double)level / 2 * rollDice() + rollDice()/2);
         return dp;
     }
 
     @Override
     public int SP() {
-        return level * rollDice();
+        return level * rollDice() + level;
     }
 
     @Override
