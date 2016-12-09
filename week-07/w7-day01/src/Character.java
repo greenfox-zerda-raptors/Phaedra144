@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 /**
@@ -5,8 +6,8 @@ import java.util.Random;
  */
 public abstract class Character extends GameObject {
 
-    Random rand = new Random();
-    int dice;
+    public Random rand = new Random();
+    protected int dice;
     protected int currentHP, maxHP, DP, SP, SV, level;
     protected boolean isAlive = true;
 
@@ -39,12 +40,15 @@ public abstract class Character extends GameObject {
     public void battle(Character randomEnemy){
         if (randomEnemy != null && this.SV > randomEnemy.DP){
             randomEnemy.currentHP =- this.SV - randomEnemy.DP;
-            if (randomEnemy.currentHP <= 0){
+            if (randomEnemy.isAlive){
+                this.currentHP = this.currentHP +1;
+            }
+            if (randomEnemy != null && randomEnemy.currentHP <= 0){
                 randomEnemy.setAlive(false);
             }
         }
         else{
-            randomEnemy.currentHP =- this.SV - randomEnemy.DP;
+            this.currentHP =- randomEnemy.SV - this.DP;
             if (this.currentHP <= 0){
                 this.setAlive(false);
             }
@@ -58,6 +62,22 @@ public abstract class Character extends GameObject {
         }        
     }
 
+    public void moveEnemy (int x){
+
+        if (x == 1){
+            posX += 1;
+        }
+        else if (x == 2){
+            posX -= 1;
+        }
+        else if (x == 3){
+            posY += 1;
+        }
+        else if (x == 4){
+            posY -= 1;
+        }
+
+    }
 
 
     public int rollDice() {

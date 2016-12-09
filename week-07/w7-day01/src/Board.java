@@ -12,11 +12,12 @@ import java.util.Random;
  */
 public class Board extends JPanel implements KeyListener {
 
-    Hero myhero;
-    Area myarea;
-    ArrayList<Character> enemies;
-    Boss myboss;
-    Random rand = new Random();
+    protected Hero myhero;
+    protected Area myarea;
+    protected ArrayList<Character> enemies;
+    protected Boss myboss;
+    protected Random rand = new Random();
+    static int moveCounter;
 
 
     public Board() {
@@ -48,7 +49,6 @@ public class Board extends JPanel implements KeyListener {
                 enemy.draw(graphics);
             }
         }
-//        myboss.draw(graphics);
 
         graphics.drawString(myhero.toString(), 620, 20);
         if (ifTheSameTile(myhero)) {
@@ -99,16 +99,39 @@ public class Board extends JPanel implements KeyListener {
     }
 
     public void monsterStrikesHero() {
-        for (Character randomMonster : enemies) {
-            if (randomMonster.getPosX() == myhero.getPosX() && randomMonster.getPosY() == myhero.getPosY()) {
-                randomMonster.strike(myhero);
+        for (Character randomEnemy : enemies) {
+            if (randomEnemy.getPosX() == myhero.getPosX() && randomEnemy.getPosY() == myhero.getPosY()) {
+                randomEnemy.strike(myhero);
+            }
+        }
+    }
+
+    public void monstersMoveRandom(){
+        int random4 = rand.nextInt(4)+1;
+        for (Character randomEnemy : enemies){
+            int check1 = myarea.getPosition(randomEnemy.getPosX() + 1, randomEnemy.getPosY());
+            int check2 = myarea.getPosition(randomEnemy.getPosX() - 1, randomEnemy.getPosY());
+            int check3 = myarea.getPosition(randomEnemy.getPosX(), randomEnemy.getPosY() + 1);
+            int check4 = myarea.getPosition(randomEnemy.getPosX(), randomEnemy.getPosY() - 1);
+
+            if (moveCounter % 2 == 0 && check1 == 0 && random4 == 1){
+                randomEnemy.moveEnemy(1);
+            }
+            else if (moveCounter % 2 == 0 && check2 == 0 && random4 == 2){
+                randomEnemy.moveEnemy(2);
+            }
+            else if (moveCounter % 2 == 0 && check3 == 0 && random4 == 3){
+                randomEnemy.moveEnemy(3);
+            }
+            else if (moveCounter % 2 == 0 && check4 == 0 && random4 == 4){
+                randomEnemy.moveEnemy(4);
             }
         }
     }
 
     public boolean ifTheSameTile(Character randomChar) {
-        for (Character randomMonster : enemies) {
-            if (randomMonster.getPosX() == randomChar.getPosX() && randomMonster.getPosY() == randomChar.getPosY()) {
+        for (Character randomEnemy : enemies) {
+            if (randomEnemy.getPosX() == randomChar.getPosX() && randomEnemy.getPosY() == randomChar.getPosY()) {
                 return true;
             }
 
@@ -117,9 +140,9 @@ public class Board extends JPanel implements KeyListener {
     }
 
     public Character findCharacter() {
-        for (Character randomMonster : enemies) {
-            if (randomMonster.getPosX() == myhero.getPosX() && randomMonster.getPosY() == myhero.getPosY()) {
-                return randomMonster;
+        for (Character randomEnemy : enemies) {
+            if (randomEnemy.getPosX() == myhero.getPosX() && randomEnemy.getPosY() == myhero.getPosY()) {
+                return randomEnemy;
 
             }
         }
@@ -138,21 +161,29 @@ public class Board extends JPanel implements KeyListener {
             int check = myarea.getPosition(myhero.getPosX(), myhero.getPosY() + 1);
             myhero.move("hero-down.png", 0, 1, check);
             this.monsterStrikesHero();
+            moveCounter++;
+            this.monstersMoveRandom();
 
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
             int check = myarea.getPosition(myhero.getPosX(), myhero.getPosY() - 1);
             myhero.move("hero-up.png", 0, -1, check);
             this.monsterStrikesHero();
+            moveCounter++;
+            this.monstersMoveRandom();
 
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             int check = myarea.getPosition(myhero.getPosX() + 1, myhero.getPosY());
             myhero.move("hero-right.png", 1, 0, check);
             this.monsterStrikesHero();
+            moveCounter++;
+            this.monstersMoveRandom();
 
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             int check = myarea.getPosition(myhero.getPosX() - 1, myhero.getPosY());
             myhero.move("hero-left.png", -1, 0, check);
             this.monsterStrikesHero();
+            moveCounter++;
+            this.monstersMoveRandom();
 
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             myhero.battle(findCharacter());

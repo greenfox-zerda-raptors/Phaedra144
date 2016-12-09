@@ -1,9 +1,9 @@
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 
 /**
  * Created by ${SzilviaB} on 2016. 12. 05..
@@ -68,11 +68,6 @@ public class GameObject {
             e.printStackTrace();
         }
 
-    }
-
-    public void moveWithPosOnly ( int x, int y){
-        this.posX =+ x;
-        this.posY =+ y;
     }
 
 
