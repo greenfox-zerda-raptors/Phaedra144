@@ -6,8 +6,6 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static javax.swing.plaf.basic.BasicGraphicsUtils.drawString;
-
 
 /**
  * Created by ${SzilviaB} on 2016. 12. 05..
@@ -16,7 +14,7 @@ public class Board extends JPanel implements KeyListener {
 
     Hero myhero;
     Area myarea;
-    ArrayList<Monster> monsters = new ArrayList<Monster>();
+    ArrayList<Skeleton> skeletons = new ArrayList<Skeleton>();
     Random rand = new Random();
 
 
@@ -44,40 +42,40 @@ public class Board extends JPanel implements KeyListener {
 
         myarea.draw(graphics);
         myhero.draw(graphics);
-        for (GameObject item2 : monsters) {
+        for (GameObject item2 : skeletons) {
             item2.draw(graphics);
         }
         graphics.drawString(myhero.toString(), 20, 565);
-        if (ifTheSameTile()){
-            for (int i = 0; i < monsters.size(); i++) {
-                graphics.drawString(monsters.get(i).toString(), 20, 580 + 15 * i);
+        if (ifTheSameTile(myhero)){
+            for (int i = 0; i < skeletons.size(); i++) {
+                graphics.drawString(skeletons.get(i).toString(), 20, 580 + 15 * i);
             }
         }
 
     }
 
 
-    public ArrayList<Monster> createSkeletons() {
-        monsters = new ArrayList<Monster>();
+    public ArrayList<Skeleton> createSkeletons() {
+        skeletons = new ArrayList<Skeleton>();
         int j = rand.nextInt(4) + 3;
         for (int i = 0; i < j; i++) {
-            int randomPosX = rand.nextInt(10) + 1;
-            int randomPosY = rand.nextInt(9) + 1;
-            Monster randomSkel = new Monster("skeleton.png");
-            while (myarea.getPosition(randomPosX, randomPosY) == 1) {
-                randomPosX = rand.nextInt(10) + 1;
-                randomPosY = rand.nextInt(9) + 1;
+            int randomPosX = rand.nextInt(10);
+            int randomPosY = rand.nextInt(9);
+            Skeleton randomSkel = new Skeleton("skeleton.png");
+            while (myarea.getPosition(randomPosX, randomPosY) == 1 && !(ifTheSameTile(randomSkel))) {
+                randomPosX = rand.nextInt(10);
+                randomPosY = rand.nextInt(9);
             }
             randomSkel.setPosX(randomPosX);
             randomSkel.setPosY(randomPosY);
 
-            monsters.add(randomSkel);
+            skeletons.add(randomSkel);
         }
-        return monsters;
+        return skeletons;
     }
 
     public void monsterStrikesHero() {
-        for (Character randomMonster : monsters) {
+        for (Character randomMonster : skeletons) {
             if (randomMonster.getPosX() == myhero.getPosX() && randomMonster.getPosY() == myhero.getPosY()) {
                 randomMonster.strike(myhero);
 
@@ -85,9 +83,9 @@ public class Board extends JPanel implements KeyListener {
         }
     }
 
-    public boolean ifTheSameTile() {
-        for (Character randomMonster : monsters) {
-            if (randomMonster.getPosX() == myhero.getPosX() && randomMonster.getPosY() == myhero.getPosY()) {
+    public boolean ifTheSameTile(Character randomChar) {
+        for (Character randomMonster : skeletons) {
+            if (randomMonster.getPosX() == randomChar.getPosX() && randomMonster.getPosY() == randomChar.getPosY()) {
                 return true;
             }
 
@@ -95,8 +93,8 @@ public class Board extends JPanel implements KeyListener {
         return false;
     }
 
-    public Monster findMonster() {
-        for (Monster randomMonster : monsters) {
+    public Skeleton findMonster() {
+        for (Skeleton randomMonster : skeletons) {
             if (randomMonster.getPosX() == myhero.getPosX() && randomMonster.getPosY() == myhero.getPosY()) {
                 return randomMonster;
 

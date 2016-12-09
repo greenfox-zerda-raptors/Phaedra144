@@ -1,14 +1,11 @@
-import java.util.ArrayList;
-
 /**
- * Created by ${SzilviaB} on 2016. 12. 08..
+ * Created by ${SzilviaB} on 2016. 12. 09..
  */
-public class Monster extends Character {
+public class Boss extends Character {
 
 
 
-
-    public Monster(String filename) {
+    public Boss(String filename) {
         super(filename, 0,0, 1, true);
         maxHP = this.maxHP();
         currentHP = maxHP;
@@ -38,6 +35,8 @@ public class Monster extends Character {
 
     @Override
     public String toString() {
-        return String.format("Monster (Level %d) HP: %d/%d | DP: %d | SP: %d", level, currentHP, maxHP, DP, SP);
+        return String.format("Boss (Level %d) HP: %d/%d | DP: %d | SP: %d", level, currentHP, maxHP, DP, SP);
     }
 }
+
+
