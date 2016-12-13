@@ -67,15 +67,14 @@ public class Board extends JPanel implements KeyListener {
             int randomPosX = rand.nextInt(10);
             int randomPosY = rand.nextInt(9);
             Skeleton randomSkel = new Skeleton("skeleton.png");
-            Boss randomBoss = new Boss("boss.png");
-            while (myarea.getPosition(randomPosX, randomPosY) == 1 && !(ifTheSameTile(randomSkel))) {
+            while (myarea.getPosition(randomPosX, randomPosY) == 1 &&
+                    !(ifTheSameTile(randomSkel))) {
 
                 randomPosX = rand.nextInt(10);
                 randomPosY = rand.nextInt(9);
             }
             randomSkel.setPosX(randomPosX);
             randomSkel.setPosY(randomPosY);
-            randomBoss.setPosX(randomPosX);
 
             enemies.add(randomSkel);
         }

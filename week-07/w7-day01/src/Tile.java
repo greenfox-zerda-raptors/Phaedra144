@@ -4,11 +4,6 @@
 public class Tile extends GameObject {
     public boolean moveable;
 
-
-    public Tile (){
-
-    }
-
     public Tile(String filename, int posX, int posY, boolean moveable) {
         super(filename, posX, posY);
         this.moveable = moveable;

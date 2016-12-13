@@ -40,14 +40,11 @@ public abstract class Character extends GameObject {
     public void battle(Character randomEnemy){
         if (randomEnemy != null && this.SV > randomEnemy.DP){
             randomEnemy.currentHP =- this.SV - randomEnemy.DP;
-            if (randomEnemy.isAlive){
-                this.currentHP = this.currentHP +1;
-            }
-            if (randomEnemy != null && randomEnemy.currentHP <= 0){
+            if (randomEnemy.currentHP <= 0){
                 randomEnemy.setAlive(false);
             }
         }
-        else{
+        else if(randomEnemy != null){
             this.currentHP =- randomEnemy.SV - this.DP;
             if (this.currentHP <= 0){
                 this.setAlive(false);

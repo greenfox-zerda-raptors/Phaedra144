@@ -3,9 +3,6 @@
  */
 public class Wall extends Tile {
 
-    public Wall(){
-
-    }
 
     public Wall(int posX, int posY) {
         super("wall.png", posX, posY, false);
