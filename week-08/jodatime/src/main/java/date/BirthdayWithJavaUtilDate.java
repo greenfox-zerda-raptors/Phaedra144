@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
+
 
 public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
 

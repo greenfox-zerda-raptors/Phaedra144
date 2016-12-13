@@ -1,7 +1,9 @@
 package date;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
-
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -12,31 +14,61 @@ public class BirthdayWithJodaTime implements BirthdayCalculator<LocalDate> {
     @Override
     public LocalDate parseDate(String str) {
         // TODO - return with the parsed date; format is: yyyy-MM-dd
-        return null;
+        if (str != null){
+            LocalDate ld = new LocalDate(str);
+
+            return ld;
+        }
+        throw new NullPointerException();
     }
 
     @Override
     public String printMonthAndDay(LocalDate date) {
         // TODO - return the date formatted: month & day (MM. dd.)
-        return null;
+        DateTimeFormatter formatter = DateTimeFormat.forPattern("MM. dd.");
+        if (date != null){
+            String formattedDate = formatter.print(date);
+            return formattedDate;
+        }
+        else{
+            throw new NullPointerException();
+        }
+
+
     }
 
     @Override
     public boolean isAnniversaryToday(LocalDate date) {
         // TODO - return with true if today is the same month+day as date
-        return false;
+        DateTime today = new DateTime();
+        if (date != null){
+            return today.equals(date);
+        } else {
+            throw new NullPointerException();
+        }
+
     }
 
     @Override
     public int calculateAgeInYears(LocalDate birthday) {
         // TODO - return how many years age the input date 'birthday' was
-        return -1;
+        DateTime today = new DateTime();
+        if (birthday != null){
+            birthday = new LocalDate();
+            int age = today.getYear() - birthday.getYear();
+            return age;
+        } else {
+            throw new NullPointerException();
+        }
     }
 
     @Override
     public int calculateDaysToNextAnniversary(LocalDate date) {
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
-        return -1;
+        DateTime today = new DateTime();
+        date = new LocalDate();
+        int daysBetween = today.getDayOfYear() - date.getDayOfYear();
+        return daysBetween;
     }
 
     public static void main(String[] args) {
