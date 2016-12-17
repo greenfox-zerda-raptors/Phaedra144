@@ -7,7 +7,10 @@ import com.j256.ormlite.table.TableUtils;
 import java.sql.SQLException;
 
 public class Workshop03 {
+
+
     public static void main(String[] args) throws SQLException {
+        Address firstAddress = new Address("Budapest", "Hungary", "Andrássy út", 1061);
         String databaseUrl = "jdbc:mysql://127.0.0.1:3306/workshop03?user=root&password=12345";
 
         ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
@@ -18,8 +21,12 @@ public class Workshop03 {
         Dao<Account, String> accountDao =
                 DaoManager.createDao(connectionSource, Account.class);
 
-        Account account = new Account("Captain America", "uejnsd632**234.", new Address("Budapest", "Hungary", "Andrássy út", 1061));
+        Account account = new Account("Captain America", "uejnsd632**234.", firstAddress);
         createAccountIfNotExists(accountDao, account);
+
+        Account account2 = new Account("Superman", "uejnsd632**234.", firstAddress);
+        createAccountIfNotExists(accountDao, account2);
+
 
 
         account = accountDao.queryForId("Captain America");

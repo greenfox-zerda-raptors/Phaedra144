@@ -68,7 +68,10 @@ public class BirthdayWithJodaTime implements BirthdayCalculator<LocalDate> {
         DateTime today = new DateTime();
         date = new LocalDate();
         int daysBetween = today.getDayOfYear() - date.getDayOfYear();
-        return daysBetween;
+        System.out.println(daysBetween);
+        System.out.println(today.getDayOfYear());
+        System.out.println(date.getDayOfYear());
+        return  daysBetween;
     }
 
     public static void main(String[] args) {

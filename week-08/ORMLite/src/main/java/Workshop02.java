@@ -29,11 +29,11 @@ public class Workshop02 {
             accounts.add(tempAccount);
             x++;
         }
-//        List<Account>accounts2 = accountDao.queryForAll();
-//        for (Account account : accounts2){
-//
-//            System.out.println(account.toString());
-//        }
+        List<Account>accounts2 = accountDao.queryForAll();
+        for (Account account : accounts2){
+
+            System.out.println(account.toString());
+        }
 
         QueryBuilder<Account, String> queryBuilder =
                 accountDao.queryBuilder();
