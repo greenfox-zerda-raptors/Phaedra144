@@ -13,13 +13,13 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class HelloWEBController {
 
-    private AtomicLong num = new AtomicLong(0);
+    private AtomicLong counter = new AtomicLong(1);
 
     @RequestMapping("/web/greeting")
     public String greeting(Model model, @RequestParam String name) {
+        long num = counter.incrementAndGet();
         model.addAttribute("name", name);
-        model.addAttribute("count", num);
-        long id = num.incrementAndGet();
+        model.addAttribute("num", num);
         return "greeting";
     }
 
