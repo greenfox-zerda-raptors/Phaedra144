@@ -1,14 +1,26 @@
 package com.greenfoxacademy;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 /**
  * Created by ${SzilviaB} on 2016. 12. 20..
  */
-public class ToDo {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Todo {
 
     private int id;
     private String title;
-    private boolean isUrgent;
-    private boolean isDone;
+    private boolean urgent;
+    private boolean done;
 
+    public Todo(int id, String title) {
+        this(id, title, false, false);
+    }
 
 }

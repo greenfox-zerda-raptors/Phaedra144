@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h3 th:text="${currentTodo.id + 1} + ' ' + ${currentTodo.title}">Hello Thymeleaf</h3>
+<span><input type="checkbox" disabled="true" th:if="${currentTodo.isUrgent()}" th:checked="${true}"/></span>
+<span><input type="checkbox" disabled="true" th:if="${currentTodo.isDone()}" th:checked="${true}"/></span>
+<a href="#" th:href="@{'/todo/list'}" th:text="'Back'">Back</a>
+</body>
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
-
+<ul th:each="todo:${todos}">
+    <li th:if="${isActive} and !${todo.isDone()} or !${isActive}" th:text="${todo.title}" ></li>
+</ul>
 </body>
 </html>
