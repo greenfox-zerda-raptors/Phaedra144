@@ -19,7 +19,7 @@ public class TestBarley {
 
     @Before
     public void init() {
-        barley = Barley.builder().weight(2300L).qualityMultiplier(1.2F).expirationDate(LocalDate.parse("2017-12-12", dateTimeFormatter)).build();
+        barley = Barley.builder().weight(2300L).qualityMultiplier(1.2F).expirationDate(LocalDate.parse("2016-12-31", dateTimeFormatter)).build();
     }
 
     @Test

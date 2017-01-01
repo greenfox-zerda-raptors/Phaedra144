@@ -1,6 +1,5 @@
 package lombok.animals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.common.reflect.TypeToken;
 import lombok.extern.java.Log;
 import org.joda.time.LocalDate;

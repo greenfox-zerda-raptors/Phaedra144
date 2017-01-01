@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{'/todo/add'}" th:object="${addedTodo}" method="post">
+    <label for="id">ID:</label>
+    <input type="text" id="id" th:field="*{id}" value="0"/>
+
+    <label for="title">New task:</label>
+    <input type="text" id="title" th:field="*{title}" value="valami" />
+    <input type="submit" />
+</form>
+
+</body>
+</html>

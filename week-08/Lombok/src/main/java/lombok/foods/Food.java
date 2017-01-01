@@ -5,6 +5,7 @@ import org.joda.time.LocalDate;
 /**
  * Created by kicsen on 2016. 12. 12..
  */
+
 public interface Food {
 
     String getName();
@@ -16,6 +17,6 @@ public interface Food {
     Float getQualityMultiplier();
 
     void setQualityMultiplier(Float multiplier);
-
-    LocalDate getCreationDate();
+//
+//    LocalDate getCreationDate();
 }

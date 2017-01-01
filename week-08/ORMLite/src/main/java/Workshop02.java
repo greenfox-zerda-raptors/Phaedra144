@@ -37,7 +37,7 @@ public class Workshop02 {
 
         QueryBuilder<Account, String> queryBuilder =
                 accountDao.queryBuilder();
-        queryBuilder.orderBy(Account.NAME_FIELD_NAME, true);
+        queryBuilder.orderBy(Account.NAME_FIELD_NAME, false);
 
         PreparedQuery<Account> preparedQuery = queryBuilder.prepare();
         List<Account>accounts3 = accountDao.query(preparedQuery);

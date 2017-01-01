@@ -29,7 +29,7 @@ public class Task {
     public Task (String name){
         this.name = name;
         this.status = false;
-        this.timeStamp = new SimpleDateFormat("yyyy.MM.dd.").format(new Date());
+        this.timeStamp = new SimpleDateFormat("yyyy.MM.dd., HH:mm:ss").format(new Date());
     }
 
     public int getId() {

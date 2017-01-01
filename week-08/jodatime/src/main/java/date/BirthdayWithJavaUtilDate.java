@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 
 public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> {
@@ -65,10 +66,14 @@ public final class BirthdayWithJavaUtilDate implements BirthdayCalculator<Date> 
     public int calculateDaysToNextAnniversary(Date date) {
         // TODO - the number of days remaining to the next anniversary of 'date' (e.g. if tomorrow, return 1)
         Date today = new Date();
-        long timeBetween = today.getTime() - date.getTime();
-        double daysBetween = timeBetween/86400000L - date.getYear()*366;
-        int days = (int) Math.floor(daysBetween);
-        return days;
+        date.setYear(today.getYear());
+        if (!date.after(today)) {
+            date.setYear(date.getYear()+1);
+        }
+
+        long timeBetween = date.getTime() - today.getTime();
+
+        return (int) TimeUnit.DAYS.convert(timeBetween, TimeUnit.MILLISECONDS);
     }
 
     public static void main(String[] args) {

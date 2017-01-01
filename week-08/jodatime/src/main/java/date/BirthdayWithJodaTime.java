@@ -76,7 +76,9 @@ public class BirthdayWithJodaTime implements BirthdayCalculator<LocalDate> {
             birthday = birthday.plusYears(1);
             Interval interval = new Interval(today, birthday);
 
-            return (int) interval.toDuration().getStandardDays();
+
+
+            return (int) interval.toDuration().getStandardDays()-1;
         } else {
             return date.getDayOfYear() - numberOfDaysThisY;
         }

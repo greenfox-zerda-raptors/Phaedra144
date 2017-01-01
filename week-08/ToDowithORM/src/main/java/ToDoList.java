@@ -62,10 +62,11 @@ public class ToDoList {
         Task item = null;
         for (int i = 0; i < myList.size(); i++) {
             item = myList.get(i);
+            deleteBuilder.where().eq("id", item.getId() != 0);
+            PreparedDelete<Task> preparedDeleteQuery = deleteBuilder.prepare();
+            sqlConn.getTaskDao().delete(preparedDeleteQuery);
         }
-        deleteBuilder.where().eq("id", item.getId() != 0);
-        PreparedDelete<Task> preparedDeleteQuery = deleteBuilder.prepare();
-        sqlConn.getTaskDao().delete(preparedDeleteQuery);
+
         myList.clear();
     }
 

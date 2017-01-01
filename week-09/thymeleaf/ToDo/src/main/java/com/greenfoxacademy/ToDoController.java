@@ -3,9 +3,7 @@ package com.greenfoxacademy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by ${SzilviaB} on 2016. 12. 20..
@@ -32,6 +30,18 @@ public class ToDoController {
     public String showDetails(Model model, @PathVariable("id") int id){
         model.addAttribute("currentTodo", todoService.getTodoById(id));
         return "showdetails";
+    }
+
+    @GetMapping("/add")
+    public String addToDoForm (Model model) {
+        model.addAttribute("addedTodo", new Todo());
+        return "addTodo";
+    }
+
+    @PostMapping("/add")
+    public String todoSubmit(@ModelAttribute Todo todo) {
+        todoService.addTodo(todo);
+        return "redirect:list";
     }
 
 }

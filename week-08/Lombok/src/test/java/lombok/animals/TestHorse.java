@@ -5,6 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Modifier;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -15,6 +18,9 @@ import static org.junit.Assert.assertTrue;
 public class TestHorse {
 
     private Horse horse;
+    private Date now = new Date();
+    DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
+    String reportDate = df.format(now);
 
     @Before
     public void init() {
@@ -23,7 +29,7 @@ public class TestHorse {
 
     @Test
     public void testToString() throws Exception {
-        String expected = "Horse(super=AbstractAnimal(name=Paci, birthDate=2016-12-15, children=[], movedDistanceInMilliMeters=0, happiness=2300.0, weightInGram=100000))";
+        String expected = "Horse(super=AbstractAnimal(name=Paci, birthDate=2016-12-31, children=[], movedDistanceInMilliMeters=0, happiness=2300.0, weightInGram=100000))";
         assertEquals(expected, horse.toString());
     }
 

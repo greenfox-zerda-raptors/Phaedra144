@@ -20,7 +20,7 @@ public class MyApplication {
         this.service=svc;
     }
 
-    @Autowired
+//    @Autowired
     public void setService(MessageService svc){
         this.service=svc;
     }

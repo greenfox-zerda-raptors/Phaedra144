@@ -13,6 +13,8 @@ import org.joda.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 /**
  * Created by kicsen on 2016. 12. 12..
  */

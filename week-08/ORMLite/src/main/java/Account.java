@@ -19,31 +19,14 @@ public class Account {
     @DatabaseField (columnName = PASSWORD_FIELD_NAME)
     private String password;
 
-    @DatabaseField(foreign = true, foreignAutoCreate = true, foreignAutoRefresh = true)
-    private Address address;
-
 
     public Account() {
 // ORMLite needs a no-arg constructor
     }
 
-    public Account (String name, String password, Address address){
-        this.name = name;
-        this.password = password;
-        this.address = address;
-    }
-
     public Account(String name, String password) {
         this.name = name;
         this.password = password;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
     }
 
     public String getName() {
@@ -64,9 +47,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "{\n" +
-                "name = " + name + "\n" +
-                "address = " + "{" + "\n" + address +
-                "}";
+        return name;
     }
 }

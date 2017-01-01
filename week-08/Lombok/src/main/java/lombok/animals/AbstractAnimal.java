@@ -1,9 +1,6 @@
 package lombok.animals;
-
-import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import lombok.*;
-import lombok.extern.java.Log;
 import lombok.foods.Food;
 import org.joda.time.LocalDate;
 
@@ -12,8 +9,8 @@ import java.util.List;
 /**
  * Created by kicsen on 2016. 12. 12..
  */
-@Getter
 @Setter
+@Getter
 @EqualsAndHashCode
 @ToString(exclude = "childrenNumber")
 

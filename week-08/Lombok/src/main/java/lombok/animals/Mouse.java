@@ -1,16 +1,19 @@
 package lombok.animals;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
 import lombok.*;
 import lombok.extern.java.Log;
 import lombok.foods.Food;
 
 import java.util.logging.Logger;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 /**
  * Created by kicsen on 2016. 12. 12..
  */
-@Getter
-@Setter
+
 @EqualsAndHashCode
 @ToString
 @Log

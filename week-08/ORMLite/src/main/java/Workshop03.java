@@ -15,16 +15,16 @@ public class Workshop03 {
 
         ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
 
-        TableUtils.createTableIfNotExists(connectionSource, Account.class);
+        TableUtils.createTableIfNotExists(connectionSource, Account2.class);
         TableUtils.createTableIfNotExists(connectionSource, Address.class);
 
-        Dao<Account, String> accountDao =
-                DaoManager.createDao(connectionSource, Account.class);
+        Dao<Account2, String> accountDao =
+                DaoManager.createDao(connectionSource, Account2.class);
 
-        Account account = new Account("Captain America", "uejnsd632**234.", firstAddress);
+        Account2 account = new Account2("Captain America", "uejnsd632**234.", firstAddress);
         createAccountIfNotExists(accountDao, account);
 
-        Account account2 = new Account("Superman", "uejnsd632**234.", firstAddress);
+        Account2 account2 = new Account2("Superman", "uejnsd632**234.", firstAddress);
         createAccountIfNotExists(accountDao, account2);
 
 
@@ -36,7 +36,7 @@ public class Workshop03 {
 
 
 
-    private static void createAccountIfNotExists(Dao<Account, String> accountDao, Account acc) throws SQLException {
+    private static void createAccountIfNotExists(Dao<Account2, String> accountDao, Account2 acc) throws SQLException {
         if(accountDao.queryForId(acc.getName()) == null) {
             accountDao.create(acc);
         }
