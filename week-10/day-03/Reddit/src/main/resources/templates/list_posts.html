@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Szilvi Reddit</title>
+</head>
+<body>
+<a class="newpostlink" href="/posts/add">Add new post</a>
+
+<h1>Posts</h1>
+
+<table class="tableoflists" id="posts_list">
+    <thead>
+    <tr>
+        <th>SCORES</th>
+        <th colspan="2">Actions</th>
+        <th>Content</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="post : ${posts}">
+        <td class="listedscores" data-th-text="${post.score}"></td>
+        <td> <a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a></td>
+        <td> <a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
+        <td class="listedcontents" data-th-text="${post.content}"></td>
+
+        <!--<td>-->
+            <!--<a th:href="@{'/posts/{id}/delete'(id=${post.id})}" class="delete" th:attr="name=${post.message}">-->
+                        <!--<span class="fa-stack">-->
+                            <!--<i class="glyphicon glyphicon-trash"></i>-->
+                        <!--</span>-->
+            <!--</a>-->
+        <!--</td>-->
+
+        <!--<td>-->
+            <!--<a th:href="@{'/posts/{id}/edit'(id=${post.id})}" class="edit" th:attr="name=${post.message}">-->
+                    <!--<span class="fa-stack">-->
+                        <!--<i class="glyphicon glyphicon-edit"></i>-->
+                    <!--</span>-->
+
+            <!--</a>-->
+        <!--</td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

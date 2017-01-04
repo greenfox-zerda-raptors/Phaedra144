@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create New Post</title>
+</head>
+<body>
+<form action="#" th:action="@{'/posts/add'}" th:object="${addedPost}" method="post">
+    <div class="formgroup">
+        <label for="content">Content</label>
+        <input type="text" id="content" th:field="*{content}"/>
+    </div>
+    <button type="submit" id="submit" class="submitbutton">Submit</button>
+</form>
+
+</body>
+</html>
