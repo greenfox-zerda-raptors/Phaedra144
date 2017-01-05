@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by ${SzilviaB} on 2017. 01. 04..
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name="reddit")
+@Table
 public class Post {
 
     @Id
@@ -19,13 +20,17 @@ public class Post {
     private long id;
     private String content;
     private int score;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateWhenCreated;
 
     public Post (){
-
+        this.dateWhenCreated = new Date();
     }
 
     public Post (String content){
+        this();
         this.content = content;
+
     }
 
     public void increment(){

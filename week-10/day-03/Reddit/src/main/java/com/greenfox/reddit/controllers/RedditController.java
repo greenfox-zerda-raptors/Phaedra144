@@ -1,11 +1,12 @@
 package com.greenfox.reddit.controllers;
-
 import com.greenfox.reddit.models.Post;
-import com.greenfox.reddit.services.PostRepository;
+import com.greenfox.reddit.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 
 
 /**
@@ -15,45 +16,46 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/posts")
 public class RedditController {
 
+
+    PostService postService;
+
     @Autowired
-    PostRepository repository;
+    public RedditController(PostService postService) {
+        this.postService = postService;
+    }
 
     @RequestMapping("/hello")
     public String greeting (){
         return "helloworld";
     }
 
-    @RequestMapping(value = {"", "/"})
-    public String list(Model model) {
-        model.addAttribute("posts", repository.findAll());
+    @RequestMapping(value = {"","/"})
+    public String list(Model model, Pageable pageable) {
+        model.addAttribute("posts", postService.findPostsTop10(pageable));
         return "list_posts";
     }
 
     @GetMapping("/add")
     public String addPost (Model model) {
-        model.addAttribute("addedPost", new Post());
+        postService.addPost(model);
         return "add_post";
     }
 
     @PostMapping("/add")
     public String createPost(@ModelAttribute Post post) {
-        repository.save(post);
+        postService.savePost(post);
         return "redirect:/posts/";
     }
 
     @RequestMapping(value = "/{id}/upvote", method = RequestMethod.GET)
     public String incrementScore(@PathVariable long id) {
-        Post post = repository.findOne(id);
-        post.increment();
-        repository.save(post);
+       postService.upvoting(id);
         return "redirect:/posts/";
     }
 
     @RequestMapping(value = "/{id}/downvote", method = RequestMethod.GET)
     public String decrementScore(@PathVariable long id) {
-        Post post = repository.findOne(id);
-        post.decrement();
-        repository.save(post);
+        postService.downvoting(id);
         return "redirect:/posts/";
     }
 
