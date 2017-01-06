@@ -3,12 +3,11 @@ package com.greenfox.reddit.services;
 import com.greenfox.reddit.models.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
+import java.util.List;
 
 
 /**
@@ -36,13 +35,13 @@ public class PostService {
         model.addAttribute("addedPost", new Post());
     }
 
-    public Page<Post> find10Posts(Pageable pageable) {
+    public Page<Post> findPosts(Pageable pageable) {
         return repository.findAll(pageable);
     }
 
-//    public Page<Post> findPrevious10(){
-//        return repository.findAll(new PageRequest(pageNumber--, 5, Sort.Direction.DESC, "score"));
-//    }
+    public List<Post> findFirst5(){
+        return repository.findTop5ByOrderByScoreDesc();
+    }
 
     public void upvoting(long id){
         Post post = repository.findOne(id);

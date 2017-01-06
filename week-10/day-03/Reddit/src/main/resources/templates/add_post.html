@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Create New Post</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../mylayout.css"/>
 </head>
 <body>
-<form action="#" th:action="@{'/posts/add'}" th:object="${addedPost}" method="post">
-    <div class="formgroup">
-        <label for="content">Content</label>
-        <input type="text" id="content" th:field="*{content}"/>
+<h2 class="page-header">Add new post</h2>
+<form class="form-inline" action="#" th:action="@{'/posts/add'}" th:object="${addedPost}" method="post">
+    <div class="form-group">
+        <label for="content"></label>
+        <input class="form-control" type="text" id="content" th:field="*{content}"/>
     </div>
-    <button type="submit" id="submit" class="submitbutton">Submit</button>
+    <button type="submit" id="submit" class="btn btn-danger">Submit</button>
 </form>
 
 </body>

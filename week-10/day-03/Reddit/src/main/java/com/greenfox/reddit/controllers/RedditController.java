@@ -31,7 +31,8 @@ public class RedditController {
 
     @RequestMapping(value = {"","/"})
     public String list(Model model, Pageable pageable) {
-        model.addAttribute("posts", postService.find10Posts(pageable));
+        model.addAttribute("posts", postService.findPosts(pageable));
+//        model.addAttribute("posts", postService.findFirst5());
         return "list_posts";
     }
 
