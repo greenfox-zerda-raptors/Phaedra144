@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Szilvi Reddit</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
 </head>
-<body>
-<a class="newpostlink" href="/posts/add">Add new post</a>
+<body class="container theme-showcase">
 
-<h1>Posts</h1>
+<div class="jumbotron">
+    <h1>Posts</h1>
+    <a class="btn btn-lg btn-link" href="/posts/add">Add new post</a>
+</div>
 
-<table class="tableoflists" id="posts_list">
+
+<table class="table" id="posts_list">
     <thead>
     <tr>
         <th>SCORES</th>
-        <th colspan="2">Actions</th>
+        <th>Actions</th>
         <th>Content</th>
-        <th></th>
+        <th>Date when created</th>
     </tr>
     </thead>
     <tbody>
     <tr data-th-each="post : ${posts}">
-        <td class="listedscores" th:text="${post.score}"></td>
+        <td th:text="${post.score}"></td>
         <td> <a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a> <a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
-        <td class="listedcontents" th:text="${post.content}"></td>
-        <td class="date" th:text="${#dates.format(post.dateWhenCreated, 'dd/MM/yyyy, HH:mm:ss')}"></td>
-    </tr>
-    
-    <tr>
-        <td></td>
-        <td><a class="nextpage" href="/posts/"> &lt;&lt;Previous posts </a></td>
-        <td></td>
-        <td><a class="nextpage" href="/posts/">Next posts>></a></td>
-
+        <td th:text="${post.content}"></td>
+        <td th:text="${#dates.format(post.dateWhenCreated, 'dd/MM/yyyy, HH:mm:ss')}"></td>
     </tr>
     </tbody>
 </table>
+<div>
+    <tr>
+        <td><a class="btn btn-danger" href="#" th:href="@{'/posts?page=0&amp;size=5&amp;sort=score,desc'}">←First</a></td>
+        <td><a class="btn btn-danger" th:if="${posts.hasPrevious()}" href="#" th:href="@{'/posts?page=' + ${posts.getNumber()-1} + '&amp;size=5&amp;sort=score,desc' }">Go to previous</a></td>
+        <td><a class="btn btn-danger" th:if="${posts.hasNext()}" href="#" th:href="@{'/posts?page=' + ${posts.getNumber()+1} + '&amp;size=5&amp;sort=score,desc' }">Go to next</a></td>
+        <td><a class="btn btn-danger" href="#" th:href="@{'/posts?page=' + ${posts.getTotalPages()-1} + '&amp;size=5&amp;sort=score,desc' }">Last →</a></td>
+    </tr>
+
+</div>
 
 </body>
 </html>

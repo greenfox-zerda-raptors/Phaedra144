@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
@@ -23,9 +24,9 @@ public class PostService {
         this.repository = repository;
     }
 
-    public Iterable<Post> findAll(){
-        return repository.findAll();
-    }
+//    public Iterable<Post> findAll(){
+//        return repository.findAll();
+//    }
 
     public void savePost(Post post){
         repository.save(post);
@@ -35,13 +36,13 @@ public class PostService {
         model.addAttribute("addedPost", new Post());
     }
 
-    public Page<Post> findPostsTop10(Pageable pageable) {
+    public Page<Post> find10Posts(Pageable pageable) {
         return repository.findAll(pageable);
     }
 
-    public Page<Post> findPrevious10(){
-        return repository.findAll(new PageRequest(pageNumber--, 5));
-    }
+//    public Page<Post> findPrevious10(){
+//        return repository.findAll(new PageRequest(pageNumber--, 5, Sort.Direction.DESC, "score"));
+//    }
 
     public void upvoting(long id){
         Post post = repository.findOne(id);

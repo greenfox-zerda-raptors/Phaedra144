@@ -31,7 +31,7 @@ public class RedditController {
 
     @RequestMapping(value = {"","/"})
     public String list(Model model, Pageable pageable) {
-        model.addAttribute("posts", postService.findPostsTop10(pageable));
+        model.addAttribute("posts", postService.find10Posts(pageable));
         return "list_posts";
     }
 
@@ -44,19 +44,19 @@ public class RedditController {
     @PostMapping("/add")
     public String createPost(@ModelAttribute Post post) {
         postService.savePost(post);
-        return "redirect:/posts/";
+        return "redirect:/posts";
     }
 
     @RequestMapping(value = "/{id}/upvote", method = RequestMethod.GET)
     public String incrementScore(@PathVariable long id) {
        postService.upvoting(id);
-        return "redirect:/posts/";
+        return "redirect:/posts";
     }
 
     @RequestMapping(value = "/{id}/downvote", method = RequestMethod.GET)
     public String decrementScore(@PathVariable long id) {
         postService.downvoting(id);
-        return "redirect:/posts/";
+        return "redirect:/posts";
     }
 
 
