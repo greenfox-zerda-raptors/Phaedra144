@@ -14,20 +14,20 @@ public class TextEditor {
     public TextEditor() {
     }
 
-//    @Autowired
-    public TextEditor(SpellChecker spCh){
-        System.out.println("Inside TextEditor constructor." );
-        this.spellChecker=spCh;
-    }
-
-//    @Autowired
-    public void setSpellChecker(SpellChecker spellChecker){
-        this.spellChecker = spellChecker;
-    }
-
-    public SpellChecker getSpellChecker( ) {
-        return spellChecker;
-    }
+////    @Autowired
+//    public TextEditor(SpellChecker spCh){
+//        System.out.println("Inside TextEditor constructor." );
+//        this.spellChecker=spCh;
+//    }
+//
+////    @Autowired
+//    public void setSpellChecker(SpellChecker spellChecker){
+//        this.spellChecker = spellChecker;
+//    }
+//
+//    public SpellChecker getSpellChecker( ) {
+//        return spellChecker;
+//    }
 
     public void spellCheck(String tx) {
         spellChecker.checkSpelling(tx);

@@ -3,6 +3,8 @@ import com.greenfox.reddit.models.Post;
 import com.greenfox.reddit.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +32,7 @@ public class RedditController {
     }
 
     @RequestMapping(value = {"","/"})
-    public String list(Model model, Pageable pageable) {
+    public String list(Model model, @PageableDefault(sort = {"score"}, direction = Sort.Direction.DESC, size = 5)Pageable pageable) {
         model.addAttribute("posts", postService.findPosts(pageable));
 //        model.addAttribute("posts", postService.findFirst5());
         return "list_posts";

@@ -20,6 +20,10 @@ public class Workshop03 {
 
         Dao<Account2, String> accountDao =
                 DaoManager.createDao(connectionSource, Account2.class);
+        Dao<Address, String> addressDao =
+                DaoManager.createDao(connectionSource, Address.class);
+
+        addressDao.create(firstAddress);
 
         Account2 account = new Account2("Captain America", "uejnsd632**234.", firstAddress);
         createAccountIfNotExists(accountDao, account);
