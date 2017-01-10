@@ -47,6 +47,21 @@ public class Workshop08 {
         Garage garage = new Garage();
         garage.addCar(myThirdCar);
         System.out.println(garage);
+
+        ArrayList<String> meals = new ArrayList<>(
+                Arrays.asList("Hamburger","Toast", "Broccoli", "Ravioli", "Gyros", "Chocolate"));
+        ArrayList<Integer> calories = new ArrayList<>(
+                Arrays.asList(320, 120, 50, 250, 400, 350));
+        ArrayList<MealType> types = new ArrayList<>(
+                Arrays.asList(new MealType(3), new MealType(1), new MealType(2), new MealType(5), new MealType(6), new MealType(4)));
+
+        ArrayList<Meal>mylist = new ArrayList<>();
+
+        for (int i = 0; i < 7; i++) {
+            mylist.add(new Meal(meals.get(i), calories.get(i),types.get(i)));
+            System.out.println(mylist);
+
+        }
     }
 
 

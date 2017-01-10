@@ -8,18 +8,18 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class TextEditor {
-    @Autowired
+//    @Autowired
     private SpellChecker spellChecker;
 
     public TextEditor() {
     }
 
-////    @Autowired
-//    public TextEditor(SpellChecker spCh){
-//        System.out.println("Inside TextEditor constructor." );
-//        this.spellChecker=spCh;
-//    }
-//
+    @Autowired
+    public TextEditor(SpellChecker spCh){
+        System.out.println("Inside TextEditor constructor." );
+        this.spellChecker=spCh;
+    }
+
 ////    @Autowired
 //    public void setSpellChecker(SpellChecker spellChecker){
 //        this.spellChecker = spellChecker;

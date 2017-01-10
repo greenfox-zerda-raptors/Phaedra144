@@ -15,17 +15,13 @@ import java.util.List;
  */
 @Component
 public class PostService {
-    int pageNumber = 0;
+
     PostRepository repository;
 
     @Autowired
     public PostService(PostRepository repository) {
         this.repository = repository;
     }
-
-//    public Iterable<Post> findAll(){
-//        return repository.findAll();
-//    }
 
     public void savePost(Post post){
         repository.save(post);
@@ -53,10 +49,6 @@ public class PostService {
         Post post = repository.findOne(id);
         post.decrement();
         repository.save(post);
-    }
-
-    public void increasePageNumber(){
-        pageNumber++;
     }
 
 

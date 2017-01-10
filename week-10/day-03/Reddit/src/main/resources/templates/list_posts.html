@@ -30,6 +30,7 @@
         <td> <a th:href="@{'/posts/{id}/upvote'(id=${post.id})}">+</a> <a th:href="@{'/posts/{id}/downvote'(id=${post.id})}">-</a></td>
         <td th:text="${post.content}"></td>
         <td th:text="${#dates.format(post.dateWhenCreated, 'dd/MM/yyyy, HH:mm:ss')}"></td>
+        th:text="${#dates.format(meal.createdAt, 'dd/MM/yyyy, HH:mm:ss')}"
     </tr>
     </tbody>
 </table>

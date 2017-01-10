@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Meal</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../mylayout.css"/>
+</head>
+<body>
+<h2 class="page-header">Add new meal</h2>
+    <form class="form-horizontal" method="post" action="/meals/update" role="form">
+        <div class="form-group">
+            <label for="updatedate">Date</label>
+            <textarea rows="5" class="form-control" id="updatedate" name="date" th:text="${meal.createdAt}"/>
+        </div>
+        <div class="form-group">
+            <label for="updatetype">Type</label>
+            <textarea rows="5" class="form-control" id="updatetype" name="type" th:text="${meal.type}"/>
+        </div>
+        <div class="form-group">
+            <label for="updatename">Description</label>
+            <textarea rows="5" class="form-control" id="updatename" name="name" th:text="${meal.name}"/>
+        </div>
+        <div class="form-group">
+            <label for="updatecals">Calories</label>
+            <textarea rows="5" class="form-control" id="updatecals" name="calorie" th:text="${meal.calorie}"/>
+        </div>
+        <input type="hidden" rows="5" class="form-control" name="meal_id" th:value="${meal.id}"/>
+        <button type="submit" id="submit" class="btn btn-info">Submit</button>
+    </form>
+
+</body>
+</html>
