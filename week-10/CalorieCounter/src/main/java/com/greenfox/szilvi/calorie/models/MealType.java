@@ -29,18 +29,6 @@ public class MealType {
 
     }
 
-    @Transient
-    private final ArrayList<String> typeOptions = new ArrayList<>(
-            Arrays.asList("Breakfast","Elevenses", "Lunch", "Snack", "Dinner", "Midnight Snack"));
-
-    public MealType(int sequence){
-        this.name = typeOptions.get(sequence);
-    }
-
-//    private final ArrayList<Integer> sequences = new ArrayList<>(
-//            Arrays.asList(1, 2, 3, 4, 5, 6));
-
-
     public long getId() {
         return id;
     }

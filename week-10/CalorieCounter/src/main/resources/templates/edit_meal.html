@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Edit Meal</title>
-    <link rel="stylesheet" type="text/css" href="../bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../mylayout.css"/>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../../mylayout.css"/>
 </head>
 <body>
-<h2 class="page-header">Add new meal</h2>
-    <form class="form-horizontal" method="post" action="/meals/update" role="form">
+
+<div class="container">
+    <h2 class="page-header">Edit meal</h2>
+    <form action="#" th:action="@{/meals/{id}/edit(id=${editedMeal.id})}" th:object="${editedMeal}" method="post">
         <div class="form-group">
             <label for="updatedate">Date</label>
-            <textarea rows="5" class="form-control" id="updatedate" name="date" th:text="${meal.createdAt}"/>
+            <input type="date" class="form-control" id="updatedate" name="date" th:value="${editedMeal.createdAt}"/>
         </div>
         <div class="form-group">
-            <label for="updatetype">Type</label>
-            <textarea rows="5" class="form-control" id="updatetype" name="type" th:text="${meal.type}"/>
+            <label for="updatename">Types</label>
+            <select class="form-control" th:field="${editedMeal.type}">
+                <option value="">Select Type</option>
+                <option th:each="type : ${types}" th:value="${type.id}" th:text="${type.name}">Types</option>
+            </select>
         </div>
         <div class="form-group">
             <label for="updatename">Description</label>
-            <textarea rows="5" class="form-control" id="updatename" name="name" th:text="${meal.name}"/>
+            <input class="form-control" type="text" id="updatename" name="name" th:value="${editedMeal.name}"/>
         </div>
         <div class="form-group">
             <label for="updatecals">Calories</label>
-            <textarea rows="5" class="form-control" id="updatecals" name="calorie" th:text="${meal.calorie}"/>
+            <input class="form-control" type="text" id="updatecals" name="calorie" th:value="${editedMeal.calorie}"/>
         </div>
-        <input type="hidden" rows="5" class="form-control" name="meal_id" th:value="${meal.id}"/>
         <button type="submit" id="submit" class="btn btn-info">Submit</button>
+        <a class="btn btn-info" href="/meals">Cancel</a>
     </form>
+</div>
+
 
 </body>
 </html>

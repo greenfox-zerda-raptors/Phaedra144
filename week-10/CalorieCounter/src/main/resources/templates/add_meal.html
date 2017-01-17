@@ -7,31 +7,33 @@
     <link rel="stylesheet" type="text/css" href="../mylayout.css"/>
 </head>
 <body>
-<h2 class="page-header">Add new meal</h2>
-<form class="form-inline" action="#" th:action="@{'/meals/add'}" th:object="${addedMeal}" method="post">
-    <div class="form-group">
-        <label for="updatedate">Date</label>
-        <input type="date" class="form-control" id="updatedate" name="date" th:field="*{createdAt}"/>
-    </div>
-    <div class="form-group">
-        <div class="col-md-10">
+<div class="container">
+    <h2 class="page-header">Add new meal</h2>
+    <form action="#" th:action="@{'/meals/add'}" th:object="${addedMeal}" method="post">
+        <div class="form-group">
+            <label for="updatedate">Date</label>
+            <input type="date" class="form-control" id="updatedate" name="date" th:field="*{createdAt}"/>
+        </div>
+        <div class="form-group">
             <select class="form-control" th:field="*{type}">
                 <option value="">Select Type</option>
                 <option th:each="type : ${types}" th:value="${type.id}" th:text="${type.name}">Types</option>
             </select>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="updatename">Description</label>
-        <input class="form-control" type="text" id="updatename" name="name" th:text="${addedMeal.name}"/>
-    </div>
-    <div class="form-group">
-        <label for="updatecals">Calories</label>
-        <input class="form-control" type="text" id="updatecals" name="calorie" th:text="${addedMeal.calorie}"/>
-    </div>
-    <input type="hidden"  th:value="${addedMeal.id}"/>
-    <button type="submit" id="submit" class="btn btn-info">Submit</button>
-</form>
+        <div class="form-group">
+            <label for="updatename">Description</label>
+            <input class="form-control" type="text" id="updatename" name="name" th:text="${addedMeal.name}"/>
+        </div>
+        <div class="form-group">
+            <label for="updatecals">Calories</label>
+            <input class="form-control" type="text" id="updatecals" name="calorie" th:value="${addedMeal.calorie}"/>
+        </div>
+        <input type="hidden" th:value="${addedMeal.id}"/>
+        <button type="submit" id="submit" class="btn btn-info">Submit</button>
+        <a class="btn btn-info" href="/meals">Cancel</a>
+    </form>
+</div>
+
 
 </body>
 </html>

@@ -21,7 +21,7 @@ public class Meal {
     private String name;
     private int calorie;
 
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "type_id")
     private MealType type;
 

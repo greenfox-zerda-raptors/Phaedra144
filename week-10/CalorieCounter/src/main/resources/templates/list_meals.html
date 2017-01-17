@@ -32,13 +32,13 @@
         <td th:text="${meal.name}"></td>
         <td th:text="${meal.calorie}"></td>
         <td>
-            <a th:href="@{'/meals/{id}/edit'(id=${meal.id})}" class="edit">
+            <a th:href="@{'/meals/{id}/edit'(id=${meal.id})}" class="edit" title="Edit">
                 <span class="fa-stack">
                     <i class="glyphicon glyphicon-edit"></i>
                 </span>
             </a>
 
-            <a th:href="@{'/meals/{id}/delete'(id=${meal.id})}" class="delete">
+            <a th:href="@{'/meals/{id}/delete'(id=${meal.id})}" class="delete" title="Delete">
                 <span class="fa-stack">
                     <i class="glyphicon glyphicon-trash"></i>
                 </span>
@@ -46,15 +46,26 @@
         </td>
 
     </tr>
+    <tr class="calorie-sum">
+        <td>Average Calories/Meal:</td>
+        <td th:text="${#numbers.formatDecimal(avgpermeal, 0, 2)}"></td>
+        <td>Total Calories:</td>
+        <td th:text="${sum}"></td>
+        <td></td>
+    </tr>
     </tbody>
 </table>
 <div>
     <tr>
         <td><a class="btn btn-lg btn-info" href="/meals/add">Add Meal</a></td>
-        <!--<td><a class="btn btn-info" th:if="${meals.hasPrevious()}" href="#" th:href="@{'/meals?page=0&amp;size=5&amp;sort=score,desc'}">←First</a></td>-->
-        <!--<td><a class="btn btn-info" th:if="${meals.hasPrevious()}" href="#" th:href="@{'/meals?page=' + ${meals.getNumber()-1} + '&amp;size=5&amp;sort=score,desc' }">Go to previous</a></td>-->
-        <!--<td><a class="btn btn-info" th:if="${meals.hasNext()}" href="#" th:href="@{'/meals?page=' + ${meals.getNumber()+1} + '&amp;size=5&amp;sort=score,desc' }">Go to next</a></td>-->
-        <!--<td><a class="btn btn-info" href="#" th:href="@{'/meals?page=' + ${meals.getTotalPages()-1} + '&amp;size=5&amp;sort=score,desc' }">Last →</a></td>-->
+        <td><a class="btn btn-info" th:if="${meals.hasPrevious()}" href="#"
+               th:href="@{'/meals?page=0&amp;size=5'}">←First</a></td>
+        <td><a class="btn btn-info" th:if="${meals.hasPrevious()}" href="#"
+               th:href="@{'/meals?page=' + ${meals.getNumber()-1} + '&amp;size=5' }">Go to previous</a></td>
+        <td><a class="btn btn-info" th:if="${meals.hasNext()}" href="#"
+               th:href="@{'/meals?page=' + ${meals.getNumber()+1} + '&amp;size=5' }">Go to next</a></td>
+        <td><a class="btn btn-info" href="#"
+               th:href="@{'/meals?page=' + ${meals.getTotalPages()-1} + '&amp;size=5' }">Last →</a></td>
     </tr>
 
 </div>

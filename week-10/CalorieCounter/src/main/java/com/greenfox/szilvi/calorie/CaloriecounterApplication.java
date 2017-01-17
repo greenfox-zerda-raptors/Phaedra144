@@ -1,15 +1,10 @@
 package com.greenfox.szilvi.calorie;
 
-import com.greenfox.szilvi.calorie.models.Meal;
-import com.greenfox.szilvi.calorie.models.MealType;
-import com.greenfox.szilvi.calorie.services.MealRepository;
+import com.greenfox.szilvi.calorie.repositories.MealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 @SpringBootApplication
 public class CaloriecounterApplication implements CommandLineRunner {
