@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Developers</title>
+
+
+</head>
+<body >
+
+<div>
+    <h1>Developers</h1>
+</div>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th colspan="2">Skills</th>
+        <th></th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-th-each="developer : ${developers}">
+        <td th:text="${developer.id}"></td>
+        <td th:text="${developer.firstName} + ' ' + ${developer.lastName}"></td>
+
+        <td colspan="2">
+            <span th:each="skill : ${developer.skills}">
+                <span th:text="${skill.label}"> </span>
+				</span>
+        </td>
+
+        <td>
+            <a th:href="@{'/developers/view/{id}'(id=${developer.id})}">view</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <h1>Add a developer</h1>
+</div>
+<form action="#" th:action="@{/developers/create}" th:object="${addedDeveloper}" method="post">
+    <div class="form-group" th:classappend="${#fields.hasErrors('firstName')} ? 'has-error bg-danger'">
+        <label for="first">First name</label>
+        <input type="text" id="first" th:field="*{firstName}"/>
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</span></div>
+
+
+    <label for="last">Last name</label>
+    <input type="text" id="last" th:field="*{lastName}"/>
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Name Error</span>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" th:field="*{email}"/>
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+
+
+    <button type="submit" id="submit">Create</button>
+</form>
+
+</body>
+</html>

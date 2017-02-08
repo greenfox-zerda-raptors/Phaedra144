@@ -38,14 +38,14 @@ public class CalorieController {
     }
 
     @GetMapping("/add")
-    public String addPost(Model model) {
+    public String addMeal(Model model) {
         model.addAttribute("addedMeal", new Meal());
         model.addAttribute("types", mealTypeRepo.findAll());
         return "add_meal";
     }
 
     @PostMapping("/add")
-    public String createPost(@ModelAttribute Meal meal) {
+    public String createMeal(@ModelAttribute Meal meal) {
         mealRepo.save(meal);
         return "redirect:/meals";
     }
