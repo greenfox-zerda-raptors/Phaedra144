@@ -60,7 +60,7 @@ public class GuessRandomly {
 
                 // ide csak akkor ér el a kód, ha az előző if első két ágába futott bele
                 if (guesses.size() == 4) {
-                    System.out.println("You seem are getting more desperate, running out of guesses soon. Next?");
+                    System.out.println("You seem to be getting more desperate, running out of guesses soon. Next?");
                 }
                 if (guesses.size() == 5) {
                     System.out.println("I hope you are not planning a fortune teller career! Next?");
